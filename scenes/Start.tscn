@@ -1,0 +1,83 @@
+[gd_scene load_steps=3 format=3 uid="uid://dk7tgyh1ljt7o"]
+
+[ext_resource type="Script" uid="uid://o7a6b7ypgcd0" path="res://scripts/scenes/Start.gd" id="1_8t08e"]
+
+[sub_resource type="FontFile" id="FontFile_fx3ca"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/64/0/ascent = 0.0
+cache/0/64/0/descent = 0.0
+cache/0/64/0/underline_position = 0.0
+cache/0/64/0/underline_thickness = 0.0
+cache/0/64/0/scale = 1.0
+cache/0/32/0/ascent = 0.0
+cache/0/32/0/descent = 0.0
+cache/0/32/0/underline_position = 0.0
+cache/0/32/0/underline_thickness = 0.0
+cache/0/32/0/scale = 1.0
+cache/0/22/0/ascent = 0.0
+cache/0/22/0/descent = 0.0
+cache/0/22/0/underline_position = 0.0
+cache/0/22/0/underline_thickness = 0.0
+cache/0/22/0/scale = 1.0
+cache/0/24/0/ascent = 0.0
+cache/0/24/0/descent = 0.0
+cache/0/24/0/underline_position = 0.0
+cache/0/24/0/underline_thickness = 0.0
+cache/0/24/0/scale = 1.0
+cache/0/28/0/ascent = 0.0
+cache/0/28/0/descent = 0.0
+cache/0/28/0/underline_position = 0.0
+cache/0/28/0/underline_thickness = 0.0
+cache/0/28/0/scale = 1.0
+
+[node name="Start" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 720.0
+offset_bottom = 1280.0
+script = ExtResource("1_8t08e")
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.500694
+anchor_right = 0.500694
+offset_left = -76.5
+offset_top = 169.0
+offset_right = 83.5
+offset_bottom = 204.0
+grow_horizontal = 2
+scale = Vector2(3.93815, 3.93815)
+pivot_offset = Vector2(80, 0)
+theme_override_fonts/font = SubResource("FontFile_fx3ca")
+theme_override_font_sizes/font_size = 28
+text = "여신이 되세요"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -43.0
+offset_top = -259.0
+offset_right = 43.0
+offset_bottom = -228.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(4.22282, 4.20332)
+pivot_offset = Vector2(43, 0)
+text = "새 문명 시작"
+icon_alignment = 1
+
+[connection signal="button_down" from="Control/Button" to="Control" method="_on_Button_pressed"]
+[connection signal="pressed" from="Control/Button" to="Control" method="_on_button_pressed"]

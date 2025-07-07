@@ -1,0 +1,149 @@
+[gd_scene load_steps=5 format=3 uid="uid://dsv1fxtw01nff"]
+
+[ext_resource type="Script" uid="uid://e8jr6bvpkxqg" path="res://scripts/scenes/Game.gd" id="1_ibkli"]
+[ext_resource type="Script" uid="uid://bdcv2pxuwwaw4" path="res://scripts/systems/event_system.gd" id="2_78awf"]
+[ext_resource type="Script" uid="uid://c1nyugjm41vo4" path="res://scripts/systems/state_system.gd" id="3_s0nni"]
+[ext_resource type="Script" uid="uid://by8q5v5a1lsfq" path="res://scripts/systems/parameter_system.gd" id="4_aug50"]
+
+[node name="Game" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ibkli")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 720.0
+offset_bottom = 1280.0
+
+[node name="Header" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 53.0
+offset_right = 720.0
+offset_bottom = 153.0
+
+[node name="InfoBox" type="HBoxContainer" parent="Header"]
+layout_mode = 2
+offset_left = 193.0
+offset_right = 366.0
+offset_bottom = 23.0
+scale = Vector2(1.92, 1.92)
+
+[node name="YearLabel" type="Label" parent="Header/InfoBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "0년"
+
+[node name="StateLabel" type="Label" parent="Header/InfoBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "상태이상 없음"
+
+[node name="ParamBox" type="HBoxContainer" parent="Header"]
+layout_mode = 2
+offset_left = 139.0
+offset_top = 68.0
+offset_right = 372.0
+offset_bottom = 91.0
+scale = Vector2(1.92, 1.92)
+
+[node name="MarginContainer" type="MarginContainer" parent="Header/ParamBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="PopulationLabel" type="Label" parent="Header/ParamBox/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "인구: 20"
+
+[node name="MarginContainer2" type="MarginContainer" parent="Header/ParamBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="FaithLabel" type="Label" parent="Header/ParamBox/MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "신앙: 20"
+
+[node name="MarginContainer3" type="MarginContainer" parent="Header/ParamBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="FoodLabel" type="Label" parent="Header/ParamBox/MarginContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "식량: 20"
+
+[node name="EventArea" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 321.0
+offset_right = 663.0
+offset_bottom = 921.0
+
+[node name="TitleText" type="Label" parent="EventArea"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "이벤트 제목"
+
+[node name="EventText" type="Label" parent="EventArea"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "이벤트 텍스트"
+
+[node name="MarginContainer" type="MarginContainer" parent="EventArea"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_bottom = 10
+
+[node name="Choice1Button" type="Button" parent="EventArea"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "선택지1"
+
+[node name="MarginContainer2" type="MarginContainer" parent="EventArea"]
+layout_mode = 2
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_bottom = 0
+
+[node name="Choice2Button" type="Button" parent="EventArea"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "선택지2"
+
+[node name="MarginContainer3" type="MarginContainer" parent="EventArea"]
+layout_mode = 2
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_bottom = 0
+
+[node name="Choice3Button" type="Button" parent="EventArea"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "선택지3"
+
+[node name="NextButton" type="Button" parent="EventArea"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "다음"
+
+[node name="EventSystem" type="Node" parent="."]
+script = ExtResource("2_78awf")
+
+[node name="StateSystem" type="Node" parent="."]
+script = ExtResource("3_s0nni")
+
+[node name="ParameterSystem" type="Node" parent="."]
+script = ExtResource("4_aug50")
+
+[connection signal="pressed" from="EventArea/Choice1Button" to="." method="_on_Choice1Button_pressed"]
+[connection signal="pressed" from="EventArea/Choice2Button" to="." method="_on_Choice2Button_pressed"]
+[connection signal="pressed" from="EventArea/Choice3Button" to="." method="_on_Choice3Button_pressed"]
+[connection signal="pressed" from="EventArea/NextButton" to="." method="_on_NextButton_pressed"]

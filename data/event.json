@@ -1,0 +1,495 @@
+[
+  {
+	"id": 1,
+	"type": "normal",
+	"title": "긴 겨울",
+	"text": "올해는 겨울이 끝날 기미가 없습니다. 눈밭에서 감자를 찾는 농부들이 안쓰럽기까지 하네요.",
+	"options": [
+	  {
+		"label": "비축 식량을 나눠준다",
+		"cost": { "food": 5 },
+		"success_rate": 1.0,
+		"result_text_success": "신도들이 따뜻한 죽을 먹으며 눈물을 흘립니다.",
+		"success_reward": { "faith": 3 },
+		"failure_reward": {}
+	  },
+	  {
+		"label": "알아서 버티라 해본다",
+		"cost": {},
+		"success_rate": 1.0,
+		"result_text_success": "농부들이 모닥불을 피워가며 버텨냈습니다. 조금 야위었지만요.",
+		"success_reward": { "faith": -1 },
+		"failure_reward": {}
+	  }
+	]
+  },
+  {
+	"id": 2,
+	"type": "normal",
+	"title": "농작물 병해",
+	"text": "밭이 누렇게 변해가고 있습니다. 웬 벌레인지 잎을 갉아먹고 있네요!",
+	"options": [
+	  {
+		"label": "신성한 연기로 소독한다",
+		"cost": { "faith": 4 },
+		"success_rate": 0.8,
+		"result_text_success": "벌레가 우르르 도망쳤습니다!",
+		"result_text_failure": "연기만 자욱하고 벌레는 멀쩡합니다...",
+		"success_reward": { "food": 6 },
+		"failure_reward": { "faith": -2 }
+	  },
+	  {
+		"label": "자연의 이치에 맡긴다",
+		"cost": {},
+		"success_rate": 1.0,
+		"result_text_success": "다행히 병해가 금방 지나갔습니다.",
+		"success_reward": { "food": 2 },
+		"failure_reward": {}
+	  }
+	]
+  },
+  {
+	"id": 3,
+	"type": "normal",
+	"title": "메뚜기 떼!",
+	"text": "하늘이 검게 변하더니 메뚜기 떼가 몰려오고 있습니다!",
+	"options": [
+	  {
+		"label": "신력을 발동해 쫓아낸다",
+		"cost": { "faith": 5 },
+		"success_rate": 0.9,
+		"result_text_success": "메뚜기 떼가 궤적을 그리며 사라졌습니다.",
+		"result_text_failure": "신력이 약했는지 메뚜기가 고개를 끄덕이며 밥을 먹습니다.",
+		"success_reward": { "food": 5 },
+		"failure_reward": { "food": -3 }
+	  },
+	  {
+		"label": "메뚜기를 튀겨 먹는다",
+		"cost": {},
+		"success_rate": 1.0,
+		"result_text_success": "바삭한 메뚜기 스낵이 인기입니다.",
+		"success_reward": { "faith": 2, "food": 2 },
+		"failure_reward": {}
+	  }
+	]
+  },
+  {
+	"id": 4,
+	"type": "normal",
+	"title": "풍년 축제",
+	"text": "올해 농사가 잘 되었다며 신도들이 축제를 열고 싶어합니다.",
+	"options": [
+	  {
+		"label": "신과 함께 춤을!",
+		"cost": { "food": 3 },
+		"success_rate": 1.0,
+		"result_text_success": "신도들이 웃으며 감사의 노래를 불렀습니다.",
+		"success_reward": { "faith": 5 },
+		"failure_reward": {}
+	  },
+	  {
+		"label": "일이나 더 하게 해라",
+		"cost": {},
+		"success_rate": 1.0,
+		"result_text_success": "신도들이 속으로만 투덜거립니다.",
+		"success_reward": { "faith": -2 },
+		"failure_reward": {}
+	  }
+	]
+  },
+  {
+	"id": 5,
+	"type": "normal",
+	"title": "가축 탈진",
+	"text": "가축들이 모두 드러누웠습니다. 꼴도 보기 싫을 정도네요.",
+	"options": [
+	  {
+		"label": "신의 기운을 불어넣는다",
+		"cost": { "faith": 3 },
+		"success_rate": 0.7,
+		"result_text_success": "가축들이 벌떡 일어나 뛰어다닙니다!",
+		"result_text_failure": "가축들이 뒤척이며 다시 눕습니다...",
+		"success_reward": { "food": 4 },
+		"failure_reward": { "faith": -1 }
+	  },
+	  {
+		"label": "오늘은 그냥 쉬게 한다",
+		"cost": {},
+		"success_rate": 1.0,
+		"result_text_success": "가축들이 회복했지만 생산은 적었습니다.",
+		"success_reward": { "food": 1 },
+		"failure_reward": {}
+	  }
+	]
+  },
+  {
+	"id": 6,
+	"type": "normal",
+	"title": "오염된 물",
+	"text": "강물이 시커멓게 변했습니다. 누가 저기서 세탁했나요?",
+	"options": [
+	  {
+		"label": "신성한 정화 주문을 외운다",
+		"cost": { "faith": 3 },
+		"success_rate": 0.8,
+		"result_text_success": "강물이 맑아지며 고기들이 다시 뛰놀기 시작합니다.",
+		"result_text_failure": "효과가 없었습니다. 더 독해진 것 같기도...",
+		"success_reward": { "food": 4 },
+		"failure_reward": { "faith": -1 }
+	  },
+	  {
+		"label": "우물물로 버틴다",
+		"cost": {},
+		"success_rate": 1.0,
+		"result_text_success": "모두 우물 앞에 줄을 섰지만 큰 탈 없이 지나갔습니다.",
+		"success_reward": { "faith": 1 },
+		"failure_reward": {}
+	  }
+	]
+  },
+  {
+	"id": 7,
+	"type": "normal",
+	"title": "신비한 씨앗",
+	"text": "어떤 행상이 '신의 축복이 담긴 씨앗'이라며 씨앗을 팔고 있습니다.",
+	"options": [
+	  {
+		"label": "씨앗을 산다",
+		"cost": { "food": 3 },
+		"success_rate": 0.5,
+		"result_text_success": "놀랍게도 작물이 쑥쑥 자랐습니다!",
+		"result_text_failure": "멧돼지가 다 먹었습니다.",
+		"success_reward": { "food": 6 },
+		"failure_reward": { "food": -2 }
+	  },
+	  {
+		"label": "안 사 이 사기꾼아!",
+		"cost": {},
+		"success_rate": 1.0,
+		"result_text_success": "신도들이 박장대소하며 행상을 쫓아냈습니다.",
+		"success_reward": { "faith": 1 },
+		"failure_reward": {}
+	  }
+	]
+  },
+  {
+	"id": 8,
+	"type": "normal",
+	"title": "음식 금기",
+	"text": "어떤 신도가 ‘이 음식은 불경스럽다’며 모두 먹지 말자고 주장합니다.",
+	"options": [
+	  {
+		"label": "금기를 받아들인다",
+		"cost": {},
+		"success_rate": 1.0,
+		"result_text_success": "이제부터 된장을 못 먹게 됐습니다... 대신 단합은 좋아졌네요.",
+		"success_reward": { "faith": 3 },
+		"failure_reward": {}
+	  },
+	  {
+		"label": "말도 안 되는 소리다",
+		"cost": {},
+		"success_rate": 1.0,
+		"result_text_success": "된장찌개 파벌과 김치찌개 파벌로 갈라졌습니다.",
+		"success_reward": { "faith": -2 },
+		"failure_reward": {}
+	  }
+	]
+  },
+  {
+	"id": 9,
+	"type": "normal",
+	"title": "건축 논쟁",
+	"text": "신전보다 높은 건물을 짓는 게 신성모독인지 논쟁이 붙었습니다.",
+	"options": [
+	  {
+		"label": "신전 옆에 탑을 허용한다",
+		"cost": {},
+		"success_rate": 1.0,
+		"result_text_success": "도시 미관이 살고, 신도들도 만족했습니다.",
+		"success_reward": { "faith": 2 },
+		"failure_reward": {}
+	  },
+	  {
+		"label": "신전이 최고여야 한다!",
+		"cost": {},
+		"success_rate": 1.0,
+		"result_text_success": "신전의 위엄은 지켰지만 도시가 좀 답답해졌습니다.",
+		"success_reward": { "faith": 1 },
+		"failure_reward": {}
+	  }
+	]
+  },
+  {
+	"id": 10,
+	"type": "normal",
+	"title": "이방인의 농사법",
+	"text": "이방인이 새로운 농사법을 알려준다며 접근합니다. 믿을 만할까요?",
+	"options": [
+	  {
+		"label": "시범적으로 해본다",
+		"cost": { "faith": 2 },
+		"success_rate": 0.6,
+		"result_text_success": "수확량이 눈에 띄게 늘었습니다!",
+		"result_text_failure": "작물들이 다 말라 죽었습니다.",
+		"success_reward": { "food": 5 },
+		"failure_reward": { "faith": -2 }
+	  },
+	  {
+		"label": "거절한다",
+		"cost": {},
+		"success_rate": 1.0,
+		"result_text_success": "전통 농사법이 최고지요.",
+		"success_reward": {},
+		"failure_reward": {}
+	  }
+	]
+  },
+  {
+	"id": 100,
+	"type": "special",
+	"title": "여신 반란",
+	"text": "여신의 존재를 부정하는 이들이 반란을 일으켰습니다!",
+	"options": [
+	  {
+		"label": "신벌을 내린다",
+		"cost": { "faith": 4 },
+		"success_rate": 0.7,
+		"result_text_success": "반란군이 두려움에 무릎 꿇었습니다.",
+		"result_text_failure": "반란군이 오히려 신전을 점거했습니다!",
+		"success_reward": { "faith": 5 },
+		"failure_reward": { "population": -5 }
+	  },
+	  {
+		"label": "협상을 시도한다",
+		"cost": {},
+		"success_rate": 1.0,
+		"result_text_success": "조금 불안하지만 평화롭게 해결되었습니다.",
+		"success_reward": { "faith": 2 },
+		"failure_reward": {}
+	  }
+	]
+  },
+  {
+	"id": 101,
+	"type": "special",
+	"title": "교류 차단 고민",
+	"text": "옆 마을에 이상한 병이 돌아옵니다. 문을 닫아야 할까요?",
+	"options": [
+	  {
+		"label": "문을 닫는다",
+		"cost": {},
+		"success_rate": 1.0,
+		"result_text_success": "병은 퍼지지 않았지만 마을 분위기가 침체되었습니다.",
+		"success_reward": {},
+		"failure_reward": {}
+	  },
+	  {
+		"label": "아무 일 없던 척...",
+		"cost": {},
+		"success_rate": 0.6,
+		"result_text_success": "다행히 병이 퍼지지 않았습니다.",
+		"result_text_failure": "사람들이 하나둘씩 쓰러지기 시작합니다...",
+		"success_reward": {},
+		"failure_reward": { "population": -5 }
+	  }
+	]
+  },
+  {
+	"id": 102,
+	"type": "special",
+	"title": "화산 폭발",
+	"text": "불의 여신이 질투심에 화산을 터뜨렸습니다. 빨리 대처해야 합니다!",
+	"options": [
+	  {
+		"label": "방어벽을 만든다",
+		"cost": { "faith": 5 },
+		"success_rate": 0.8,
+		"result_text_success": "용암이 신전 앞에서 멈췄습니다!",
+		"result_text_failure": "방어벽이 무너졌습니다...",
+		"success_reward": {},
+		"failure_reward": { "population": -8 }
+	  },
+	  {
+		"label": "기도를 올린다",
+		"cost": { "faith": 3 },
+		"success_rate": 0.5,
+		"result_text_success": "하늘에서 비가 내려 화산을 잠재웠습니다!",
+		"result_text_failure": "아무 일도 일어나지 않았습니다.",
+		"success_reward": { "faith": 4 },
+		"failure_reward": { "faith": -2 }
+	  }
+	]
+  },
+  {
+	"id": 103,
+	"type": "special",
+	"title": "망령 침입",
+	"text": "고대 전쟁의 망령들이 마을을 떠돌고 있습니다.",
+	"options": [
+	  {
+		"label": "정화 의식을 치른다",
+		"cost": { "faith": 4 },
+		"success_rate": 0.7,
+		"result_text_success": "영혼들이 평온하게 돌아갔습니다.",
+		"result_text_failure": "의식 도중 귀신이 깜짝 등장했습니다!",
+		"success_reward": { "faith": 3 },
+		"failure_reward": { "faith": -2 }
+	  },
+	  {
+		"label": "그냥 모른 척한다",
+		"cost": {},
+		"success_rate": 1.0,
+		"result_text_success": "밤마다 괴상한 소리가 나긴 하지만 큰 피해는 없었습니다.",
+		"success_reward": {},
+		"failure_reward": {}
+	  }
+	]
+  },
+  {
+	"id": 104,
+	"type": "special",
+	"title": "뜨지 않는 태양",
+	"text": "태양이 지평선에서 떠오르지 않습니다. 신도들이 공포에 떨고 있습니다.",
+	"options": [
+	  {
+		"label": "희망의 기도를 전한다",
+		"cost": { "faith": 2 },
+		"success_rate": 1.0,
+		"result_text_success": "신도들이 안정을 되찾았습니다.",
+		"success_reward": { "faith": 2 },
+		"failure_reward": {}
+	  },
+	  {
+		"label": "원인을 찾으러 보낸다",
+		"cost": {},
+		"success_rate": 0.5,
+		"result_text_success": "탐험대가 원인을 밝혔고, 태양이 다시 떴습니다!",
+		"result_text_failure": "탐험대는 돌아오지 않았습니다...",
+		"success_reward": { "faith": 3 },
+		"failure_reward": { "population": -3 }
+	  }
+	]
+  },
+  {
+	"id": 200,
+	"type": "miracle",
+	"title": "황금빛 나무",
+	"text": "신전 옆에 반짝이는 황금빛 나무가 자라났습니다!",
+	"options": [
+	  {
+		"label": "열매를 수확한다",
+		"cost": {},
+		"success_rate": 1.0,
+		"result_text_success": "열매에서 금 조각이 쏟아졌습니다!",
+		"success_reward": { "food": 10, "faith": 3 },
+		"failure_reward": {}
+	  },
+	  {
+		"label": "신성한 존재로 모신다",
+		"cost": { "faith": 2 },
+		"success_rate": 1.0,
+		"result_text_success": "신도들의 신앙이 크게 높아졌습니다.",
+		"success_reward": { "faith": 6 },
+		"failure_reward": {}
+	  }
+	]
+  },
+  {
+	"id": 201,
+	"type": "miracle",
+	"title": "신의 반려동물",
+	"text": "커다란 용이 나타나 당신의 애완동물이 되고 싶다 합니다.",
+	"options": [
+	  {
+		"label": "받아들인다",
+		"cost": {},
+		"success_rate": 1.0,
+		"result_text_success": "신도들이 흥분해서 더 열심히 일합니다.",
+		"success_reward": { "faith": 5, "food": 5 },
+		"failure_reward": {}
+	  },
+	  {
+		"label": "너무 부담스럽다",
+		"cost": {},
+		"success_rate": 1.0,
+		"result_text_success": "용은 실망했지만, 마을은 평온합니다.",
+		"success_reward": {},
+		"failure_reward": {}
+	  }
+	]
+  },
+  {
+	"id": 202,
+	"type": "miracle",
+	"title": "마법의 샘물",
+	"text": "숲속 요정들이 마법의 샘을 당신에게 바쳤습니다.",
+	"options": [
+	  {
+		"label": "모두에게 나눠준다",
+		"cost": {},
+		"success_rate": 1.0,
+		"result_text_success": "마을 사람들이 건강해졌습니다!",
+		"success_reward": { "population": 5, "faith": 2 },
+		"failure_reward": {}
+	  },
+	  {
+		"label": "신전 안에 모신다",
+		"cost": {},
+		"success_rate": 1.0,
+		"result_text_success": "영험한 기운이 퍼지며 신앙이 깊어졌습니다.",
+		"success_reward": { "faith": 6 },
+		"failure_reward": {}
+	  }
+	]
+  },
+  {
+	"id": 203,
+	"type": "miracle",
+	"title": "하늘에서 떨어진 알",
+	"text": "거대한 황금빛 알이 신전 앞에 떨어졌습니다.",
+	"options": [
+	  {
+		"label": "부화시켜 본다",
+		"cost": { "faith": 3 },
+		"success_rate": 0.8,
+		"result_text_success": "신성한 새가 태어나 마을을 지키고 있습니다.",
+		"result_text_failure": "안에서 아무것도 나오지 않았습니다.",
+		"success_reward": { "faith": 5, "population": 2 },
+		"failure_reward": {}
+	  },
+	  {
+		"label": "장식품으로 둔다",
+		"cost": {},
+		"success_rate": 1.0,
+		"result_text_success": "눈부셔서 모두가 기분이 좋아졌습니다.",
+		"success_reward": { "faith": 2 },
+		"failure_reward": {}
+	  }
+	]
+  },
+  {
+	"id": 204,
+	"type": "miracle",
+	"title": "남신의 고백",
+	"text": "남신이 당신에게 구애하며 대지를 축복하겠다고 합니다.",
+	"options": [
+	  {
+		"label": "받아들인다",
+		"cost": {},
+		"success_rate": 1.0,
+		"result_text_success": "하늘에서 꽃비가 내리고 작물은 넘쳐납니다!",
+		"success_reward": { "food": 10, "faith": 4 },
+		"failure_reward": {}
+	  },
+	  {
+		"label": "단호히 거절한다",
+		"cost": {},
+		"success_rate": 1.0,
+		"result_text_success": "남신은 눈물을 흘리며 돌아갔습니다... 그래도 존중을 보냈습니다.",
+		"success_reward": { "faith": 2 },
+		"failure_reward": {}
+	  }
+	]
+  }
+]

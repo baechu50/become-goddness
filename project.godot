@@ -11,8 +11,18 @@ config_version=5
 [application]
 
 config/name="become_goddness"
+run/main_scene="uid://dk7tgyh1ljt7o"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Parameter="*res://scripts/parameter.gd"
+
+[display]
+
+window/size/viewport_width=720
+window/size/viewport_height=1280
 
 [rendering]
 
