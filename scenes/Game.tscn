@@ -98,6 +98,7 @@ text = "이벤트 제목"
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "이벤트 텍스트"
+autowrap_mode = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="EventArea"]
 layout_mode = 2
