@@ -95,6 +95,7 @@ theme_override_font_sizes/font_size = 40
 text = "이벤트 제목"
 
 [node name="EventText" type="Label" parent="EventArea"]
+custom_minimum_size = Vector2(200, 150)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "이벤트 텍스트"
