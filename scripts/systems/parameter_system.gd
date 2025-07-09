@@ -1,7 +1,6 @@
 extends Node
 class_name ParameterSystem
 
-var penalty = 3;
 var allowed_keys = ["year", "faith", "food", "population"]
 
 func reset():
@@ -22,15 +21,17 @@ func apply_reward(reward: Dictionary):
 			
 func yearly_changes_text()-> String:
 	var result_text = ""	
-	var delta = max(1, int(Parameter.population / 10))
+	var delta = max(1, int(Parameter.population / 20))
+	var penalty = max(1, int(Parameter.population / 10))
 	
 	result_text="한 해가 지났습니다\n식량 -%d\n인구 +%d\n신앙 +%d\n" % [delta, delta, delta]
 	if Parameter.famine:
-		result_text+="기근 상태라 인구와 신앙이 감소합니다.\n인구 -%d\n신앙 -%d" % [penalty, penalty]
+		result_text+="기근 상태라 인구와 신앙이 감소합니다.\n인구 -%d\n신앙 -%d" % [penalty * 2, penalty]
 	return result_text
 
 func apply_yearly_changes() -> void:
-	var delta = max(1, int(Parameter.population / 10))
+	var delta = max(1, int(Parameter.population / 20))
+	var penalty = max(1, int(Parameter.population / 10))
 	
 	Parameter.food = max(0, Parameter.food - delta)
 	Parameter.population += delta
@@ -45,4 +46,4 @@ func next_year() -> void:
 	Parameter.year += 1
 
 func is_gameover() -> bool:
-	return Parameter.population <= 0
+	return Parameter.population <= 0 or Parameter.faith <= 0
