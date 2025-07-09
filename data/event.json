@@ -1,495 +1,1598 @@
 [
   {
-	"id": 1,
-	"type": "normal",
-	"title": "긴 겨울",
-	"text": "올해는 겨울이 끝날 기미가 없습니다. 눈밭에서 감자를 찾는 농부들이 안쓰럽기까지 하네요.",
-	"options": [
-	  {
-		"label": "비축 식량을 나눠준다",
-		"cost": { "food": 5 },
-		"success_rate": 1.0,
-		"result_text_success": "신도들이 따뜻한 죽을 먹으며 눈물을 흘립니다.",
-		"success_reward": { "faith": 3 },
-		"failure_reward": {}
-	  },
-	  {
-		"label": "알아서 버티라 해본다",
-		"cost": {},
-		"success_rate": 1.0,
-		"result_text_success": "농부들이 모닥불을 피워가며 버텨냈습니다. 조금 야위었지만요.",
-		"success_reward": { "faith": -1 },
-		"failure_reward": {}
-	  }
-	]
+    "id": 1,
+    "type": "normal",
+    "title": "오지 않는 비",
+    "text": "자애로운 여신님, 며칠째 비가 내리지 않아 작물이 말라가고 있습니다. 농부들이 걱정스러운 얼굴로 하늘을 올려다보며 여신님의 자비를 기다리고 있나이다!",
+    "options": [
+      {
+        "label": "신성한 힘으로 비를 내려준다",
+        "cost": { "faith": 3 },
+        "success_rate": 0.8,
+        "result_text_success": "여신님의 은총으로 촉촉한 비가 내려 작물이 다시 파릇파릇 살아났습니다. 농부들이 여신님을 찬양하고 있습니다.",
+        "result_text_failure": "구름은 모였지만 빗방울이 내리지 않아 농부들이 실망했습니다.",
+        "success_reward": { "food": 3, "faith": 2 },
+        "failure_reward": { "faith": -2, "food": -1 }
+      },
+      {
+        "label": "신도들이 스스로 해결하도록 둔다",
+        "cost": {},
+        "success_rate": 1.0,
+        "result_text_success": "신도들이 기우제를 올리며 정성을 다했지만 비 대신 땀만 흘렸습니다.",
+        "result_text_failure": "",
+        "success_reward": { "faith": -2, "food": -3 },
+        "failure_reward": {}
+      }
+    ]
   },
   {
-	"id": 2,
-	"type": "normal",
-	"title": "농작물 병해",
-	"text": "밭이 누렇게 변해가고 있습니다. 웬 벌레인지 잎을 갉아먹고 있네요!",
-	"options": [
-	  {
-		"label": "신성한 연기로 소독한다",
-		"cost": { "faith": 4 },
-		"success_rate": 0.8,
-		"result_text_success": "벌레가 우르르 도망쳤습니다!",
-		"result_text_failure": "연기만 자욱하고 벌레는 멀쩡합니다...",
-		"success_reward": { "food": 6 },
-		"failure_reward": { "faith": -2 }
-	  },
-	  {
-		"label": "자연의 이치에 맡긴다",
-		"cost": {},
-		"success_rate": 1.0,
-		"result_text_success": "다행히 병해가 금방 지나갔습니다.",
-		"success_reward": { "food": 2 },
-		"failure_reward": {}
-	  }
-	]
+    "id": 2,
+    "type": "normal",
+    "title": "폭염 피해",
+    "text": "오, 위대하신 여신이시여! 태양이 미쳤나 봅니다! 작물이 모두 익어가고 있나이다! 이대로라면 모든 옥수수가 팝콘이 될 것 같나이다.",
+    "options": [
+      {
+        "label": "시원한 바람을 불어준다",
+        "cost": { "faith": 2 },
+        "success_rate": 0.8,
+        "result_text_success": "여신님의 시원한 바람이 불어와 농부들이 환호성을 질렀습니다.",
+        "result_text_failure": "바람은 불었지만 태양으로 인해 뜨거운 바람이 불어 오히려 더 더워졌습니다.",
+        "success_reward": { "food": 3, "faith": 3 },
+        "failure_reward": { "faith": -2, "food": -1 }
+      },
+      {
+        "label": "그늘을 만들어주는 구름을 보낸다",
+        "cost": { "faith": 3 },
+        "success_rate": 0.6,
+        "result_text_success": "거대한 구름이 나타나 마을 전체를 시원하게 덮어주었습니다.",
+        "result_text_failure": "구름이 왔지만 금세 사라져 잠깐의 그늘만 만들어졌습니다. 옥수수가 팝콘으로 변했습니다.",
+        "success_reward": { "food": 3, "faith": 3 },
+        "failure_reward": { "food": 1, "faith": -2 }
+      },
+      {
+        "label": "참고 견디라고 격려한다",
+        "cost": {},
+        "success_rate": 1.0,
+        "result_text_success": "신도들이 여신님의 시련이라 여기며 굳건히 버텨냈습니다.",
+        "result_text_failure": "",
+        "success_reward": { "faith": -1, "food": -3 },
+        "failure_reward": {}
+      }
+    ]
   },
   {
-	"id": 3,
-	"type": "normal",
-	"title": "메뚜기 떼!",
-	"text": "하늘이 검게 변하더니 메뚜기 떼가 몰려오고 있습니다!",
-	"options": [
-	  {
-		"label": "신력을 발동해 쫓아낸다",
-		"cost": { "faith": 5 },
-		"success_rate": 0.9,
-		"result_text_success": "메뚜기 떼가 궤적을 그리며 사라졌습니다.",
-		"result_text_failure": "신력이 약했는지 메뚜기가 고개를 끄덕이며 밥을 먹습니다.",
-		"success_reward": { "food": 5 },
-		"failure_reward": { "food": -3 }
-	  },
-	  {
-		"label": "메뚜기를 튀겨 먹는다",
-		"cost": {},
-		"success_rate": 1.0,
-		"result_text_success": "바삭한 메뚜기 스낵이 인기입니다.",
-		"success_reward": { "faith": 2, "food": 2 },
-		"failure_reward": {}
-	  }
-	]
+    "id": 3,
+    "type": "normal",
+    "title": "농사법 제안",
+    "text": "자비로우신 여신님! 수상한 이방인이 나타나 '혁신적인 농사법'을 알려주겠다며 떠들어대고 있나이다. 믿어도 될까요?",
+    "options": [
+      {
+        "label": "이방인에게 지혜를 불어넣어준다",
+        "cost": { "faith": 2 },
+        "success_rate": 0.7,
+        "result_text_success": "여신님의 축복으로 이방인의 농사법이 정말 효과가 있었습니다!",
+        "result_text_failure": "이방인의 농사법은 엉터리였고 일부 작물이 망가졌습니다.",
+        "success_reward": { "food": 4, "faith": 3 },
+        "failure_reward": { "food": -2, "faith": -2 }
+      },
+      {
+        "label": "이방인을 쫓아내도록 한다",
+        "cost": {},
+        "success_rate": 1.0,
+        "result_text_success": "신도들이 이방인을 정중히 배웅했고 평화가 유지되었습니다.",
+        "result_text_failure": "",
+        "success_reward": { "faith": 1 },
+        "failure_reward": {}
+      }
+    ]
   },
   {
-	"id": 4,
-	"type": "normal",
-	"title": "풍년 축제",
-	"text": "올해 농사가 잘 되었다며 신도들이 축제를 열고 싶어합니다.",
-	"options": [
-	  {
-		"label": "신과 함께 춤을!",
-		"cost": { "food": 3 },
-		"success_rate": 1.0,
-		"result_text_success": "신도들이 웃으며 감사의 노래를 불렀습니다.",
-		"success_reward": { "faith": 5 },
-		"failure_reward": {}
-	  },
-	  {
-		"label": "일이나 더 하게 해라",
-		"cost": {},
-		"success_rate": 1.0,
-		"result_text_success": "신도들이 속으로만 투덜거립니다.",
-		"success_reward": { "faith": -2 },
-		"failure_reward": {}
-	  }
-	]
+    "id": 4,
+    "type": "normal",
+    "title": "풍년 축제",
+    "text": "기쁜 소식이옵니다, 여신님! 올해 대풍년을 맞아 마을 사람들이 축제를 열고 싶어 합니다. 여신님께 바칠 제물도 준비했나이다!",
+    "options": [
+      {
+        "label": "화려한 축제가 되도록 축복한다",
+        "cost": { "faith": 3 },
+        "success_rate": 1,
+        "result_text_success": "여신님의 축복으로 마을 역사상 최고의 축제가 열렸습니다!",
+        "result_text_failure": "",
+        "success_reward": { "faith": 5, "population": 3 },
+        "failure_reward": {}
+      },
+      {
+        "label": "소박하게 감사만 표하도록 한다",
+        "cost": {},
+        "success_rate": 1.0,
+        "result_text_success": "신도들이 조용히 감사 기도를 올리며 마음으로 축제를 즐겼습니다.",
+        "result_text_failure": "",
+        "success_reward": { "faith": 3 },
+        "failure_reward": {}
+      }
+    ]
   },
   {
-	"id": 5,
-	"type": "normal",
-	"title": "가축 탈진",
-	"text": "가축들이 모두 드러누웠습니다. 꼴도 보기 싫을 정도네요.",
-	"options": [
-	  {
-		"label": "신의 기운을 불어넣는다",
-		"cost": { "faith": 3 },
-		"success_rate": 0.7,
-		"result_text_success": "가축들이 벌떡 일어나 뛰어다닙니다!",
-		"result_text_failure": "가축들이 뒤척이며 다시 눕습니다...",
-		"success_reward": { "food": 4 },
-		"failure_reward": { "faith": -1 }
-	  },
-	  {
-		"label": "오늘은 그냥 쉬게 한다",
-		"cost": {},
-		"success_rate": 1.0,
-		"result_text_success": "가축들이 회복했지만 생산은 적었습니다.",
-		"success_reward": { "food": 1 },
-		"failure_reward": {}
-	  }
-	]
+    "id": 5,
+    "type": "special",
+    "title": "메뚜기 떼 공격!",
+    "text": "오, 여신님! 하늘을 뒤덮은 메뚜기 떼가 우리 밭을 향해 날아오고 있나이다! 이대로면 올해 수확이 전멸할 것 같습니다!",
+    "options": [
+      {
+        "label": "천둥번개로 메뚜기 떼를 쫓아낸다",
+        "cost": { "faith": 5 },
+        "success_rate": 0.8,
+        "result_text_success": "여신님의 천둥번개에 메뚜기들이 튀겨졌습니다. 구운 메뚜기 구이가 신도들 사이에서 인기입니다.",
+        "result_text_failure": "메뚜기를 성공적으로 퇴치했으나, 번개로 인해 밭에 불이 붙어 농작물이 탔습니다.",
+        "success_reward": { "food": 5, "faith": 5, "population": 1 },
+        "failure_reward": { "food": -3, "faith": -3, "population": -1 }
+      },
+      {
+        "label": "메뚜기의 천적 새들을 보낸다",
+        "cost": { "faith": 3 },
+        "success_rate": 0.7,
+        "result_text_success": "수많은 새들이 나타나 메뚜기들을 잡아먹었습니다!",
+        "result_text_failure": "새들이 왔지만 메뚜기가 너무 많아 역부족이었습니다.",
+        "success_reward": { "food": 3, "population": 1 },
+        "failure_reward": { "food": -3, "faith": -1 }
+      },
+      {
+        "label": "신도들이 힘을 합쳐 막아보도록 한다",
+        "cost": {},
+        "success_rate": 0.2,
+        "result_text_success": "신도들이 놀라운 단결력으로 메뚜기 떼를 막아냈습니다!",
+        "result_text_failure": "신도들이 최선을 다했지만 메뚜기 떼가 너무 많았습니다. 농작물이 초토화 되었습니다.",
+        "success_reward": { "faith": 4, "food": 3 },
+        "failure_reward": { "food": -5, "faith": -5 }
+      }
+    ]
   },
   {
-	"id": 6,
-	"type": "normal",
-	"title": "오염된 물",
-	"text": "강물이 시커멓게 변했습니다. 누가 저기서 세탁했나요?",
-	"options": [
-	  {
-		"label": "신성한 정화 주문을 외운다",
-		"cost": { "faith": 3 },
-		"success_rate": 0.8,
-		"result_text_success": "강물이 맑아지며 고기들이 다시 뛰놀기 시작합니다.",
-		"result_text_failure": "효과가 없었습니다. 더 독해진 것 같기도...",
-		"success_reward": { "food": 4 },
-		"failure_reward": { "faith": -1 }
-	  },
-	  {
-		"label": "우물물로 버틴다",
-		"cost": {},
-		"success_rate": 1.0,
-		"result_text_success": "모두 우물 앞에 줄을 섰지만 큰 탈 없이 지나갔습니다.",
-		"success_reward": { "faith": 1 },
-		"failure_reward": {}
-	  }
-	]
+    "id": 6,
+    "type": "normal",
+    "title": "가축 탈진",
+    "text": "여신님, 큰일났나이다! 우리 가축들이 모두 축 늘어져서 풀도 안 뜯고 누워만 있습니다. 마치 여름휴가 중인 게으른 신도 같나이다!",
+    "options": [
+      {
+        "label": "가축들에게 활력을 불어넣어준다",
+        "cost": { "faith": 2 },
+        "success_rate": 0.8,
+        "result_text_success": "여신님의 활력으로 가축들이 팔팔해져서 뛰어다니기 시작했습니다!",
+        "result_text_failure": "가축들이 조금 나아졌지만 여전히 축 늘어져 있습니다.",
+        "success_reward": { "food": 3, "population": 1 },
+        "failure_reward": { "food": -1, "faith": -1 }
+      },
+      {
+        "label": "신선한 풀밭을 만들어준다",
+        "cost": { "faith": 3 },
+        "success_rate": 0.7,
+        "result_text_success": "맛있는 풀밭이 생겨 가축들이 기운을 차렸습니다!",
+        "result_text_failure": "풀밭은 만들었지만 가축들이 입맛이 없나 봅니다.",
+        "success_reward": { "food": 4 },
+        "failure_reward": { "faith": -1, "food": -1 }
+      }
+    ]
   },
   {
-	"id": 7,
-	"type": "normal",
-	"title": "신비한 씨앗",
-	"text": "어떤 행상이 '신의 축복이 담긴 씨앗'이라며 씨앗을 팔고 있습니다.",
-	"options": [
-	  {
-		"label": "씨앗을 산다",
-		"cost": { "food": 3 },
-		"success_rate": 0.5,
-		"result_text_success": "놀랍게도 작물이 쑥쑥 자랐습니다!",
-		"result_text_failure": "멧돼지가 다 먹었습니다.",
-		"success_reward": { "food": 6 },
-		"failure_reward": { "food": -2 }
-	  },
-	  {
-		"label": "안 사 이 사기꾼아!",
-		"cost": {},
-		"success_rate": 1.0,
-		"result_text_success": "신도들이 박장대소하며 행상을 쫓아냈습니다.",
-		"success_reward": { "faith": 1 },
-		"failure_reward": {}
-	  }
-	]
+    "id": 7,
+    "type": "normal",
+    "title": "신비한 씨앗",
+    "text": "여신님, 수상한 행상이 나타나 '신의 축복이 담긴 신비한 씨앗'이라며 엄청난 값을 부르고 있나이다. 정말 신비한 건지 의심스럽습니다!",
+    "options": [
+      {
+        "label": "씨앗에 진짜 축복을 넣어준다",
+        "cost": { "faith": 3 },
+        "success_rate": 0.9,
+        "result_text_success": "여신님의 축복으로 씨앗이 정말 신비한 작물을 키워냈습니다!",
+        "result_text_failure": "축복을 넣었지만 씨앗 자체가 가짜였나 봅니다.",
+        "success_reward": { "food": 5, "faith": 2 },
+        "failure_reward": { "faith": -2 }
+      },
+      {
+        "label": "행상을 쫓아내도록 한다",
+        "cost": {},
+        "success_rate": 1.0,
+        "result_text_success": "신도들이 행상을 쫓아내고 사기를 막았습니다.",
+        "result_text_failure": "",
+        "success_reward": { "faith": 2 },
+        "failure_reward": {}
+      }
+    ]
   },
   {
-	"id": 8,
-	"type": "normal",
-	"title": "음식 금기",
-	"text": "어떤 신도가 ‘이 음식은 불경스럽다’며 모두 먹지 말자고 주장합니다.",
-	"options": [
-	  {
-		"label": "금기를 받아들인다",
-		"cost": {},
-		"success_rate": 1.0,
-		"result_text_success": "이제부터 된장을 못 먹게 됐습니다... 대신 단합은 좋아졌네요.",
-		"success_reward": { "faith": 3 },
-		"failure_reward": {}
-	  },
-	  {
-		"label": "말도 안 되는 소리다",
-		"cost": {},
-		"success_rate": 1.0,
-		"result_text_success": "된장찌개 파벌과 김치찌개 파벌로 갈라졌습니다.",
-		"success_reward": { "faith": -2 },
-		"failure_reward": {}
-	  }
-	]
+    "id": 8,
+    "type": "normal",
+    "title": "건축 논쟁",
+    "text": "여신님, 마을에 논쟁이 일어났나이다! 어떤 이는 신전보다 높은 건물을 짓는 것이 신성모독이라 하고, 어떤 이는 발전을 위해 필요하다고 하나이다!",
+    "options": [
+      {
+        "label": "높은 건물을 허락한다",
+        "cost": {},
+        "success_rate": 0.7,
+        "result_text_success": "여신님의 허락으로 멋진 건물이 세워져 마을이 발전했습니다!",
+        "result_text_failure": "건물은 세워졌지만 일부 신도들이 불만을 품었습니다.",
+        "success_reward": { "population": 3, "food": 1 },
+        "failure_reward": { "faith": -2 }
+      },
+      {
+        "label": "신전의 위엄을 지키도록 한다",
+        "cost": {},
+        "success_rate": 1.0,
+        "result_text_success": "신도들이 신전의 신성함을 지키기로 했습니다.",
+        "result_text_failure": "",
+        "success_reward": { "faith": 3 },
+        "failure_reward": {}
+      }
+    ]
   },
   {
-	"id": 9,
-	"type": "normal",
-	"title": "건축 논쟁",
-	"text": "신전보다 높은 건물을 짓는 게 신성모독인지 논쟁이 붙었습니다.",
-	"options": [
-	  {
-		"label": "신전 옆에 탑을 허용한다",
-		"cost": {},
-		"success_rate": 1.0,
-		"result_text_success": "도시 미관이 살고, 신도들도 만족했습니다.",
-		"success_reward": { "faith": 2 },
-		"failure_reward": {}
-	  },
-	  {
-		"label": "신전이 최고여야 한다!",
-		"cost": {},
-		"success_rate": 1.0,
-		"result_text_success": "신전의 위엄은 지켰지만 도시가 좀 답답해졌습니다.",
-		"success_reward": { "faith": 1 },
-		"failure_reward": {}
-	  }
-	]
+    "id": 9,
+    "type": "normal",
+    "title": "음식 금기",
+    "text": "여신님, 마을 원로들이 염소젖 치즈가 불길하다며 금지하자고 하나이다. ",
+    "options": [
+      {
+        "label": "말도 안되는 소리라는 신탁을 내린다.",
+        "cost": { "faith": 2 },
+        "success_rate": 0.8,
+        "result_text_success": "치즈 애호가들이 여신님을 찬양합니다.",
+        "result_text_failure": "여신님의 신탁에도 불구하고 원로들이 불길함을 떨쳐내지 못하고 있습니다. 사람들이 치즈를 거부합니다.",
+        "success_reward": { "food": 1, "faith": 4 },
+        "failure_reward": { "faith": -1, "food": -1 }
+      },
+      {
+        "label": "원로들의 뜻을 따르도록 한다",
+        "cost": {},
+        "success_rate": 1.0,
+        "result_text_success": "마을 사람들이 단결하여 치즈 금지법을 만들었습니다. 단결한 모습이 보기 좋네요!",
+        "result_text_failure": "",
+        "success_reward": { "faith": 2, "food": -2 },
+        "failure_reward": {}
+      }
+    ]
   },
   {
-	"id": 10,
-	"type": "normal",
-	"title": "이방인의 농사법",
-	"text": "이방인이 새로운 농사법을 알려준다며 접근합니다. 믿을 만할까요?",
-	"options": [
-	  {
-		"label": "시범적으로 해본다",
-		"cost": { "faith": 2 },
-		"success_rate": 0.6,
-		"result_text_success": "수확량이 눈에 띄게 늘었습니다!",
-		"result_text_failure": "작물들이 다 말라 죽었습니다.",
-		"success_reward": { "food": 5 },
-		"failure_reward": { "faith": -2 }
-	  },
-	  {
-		"label": "거절한다",
-		"cost": {},
-		"success_rate": 1.0,
-		"result_text_success": "전통 농사법이 최고지요.",
-		"success_reward": {},
-		"failure_reward": {}
-	  }
-	]
+    "id": 10,
+    "type": "special",
+    "title": "약초 채집",
+    "text": "여신님, 마을의 현명한 할머니가 위험한 산 깊은 곳에 신비한 약초가 있다고 하나이다. 그 약초로 만든 약이 모든 병을 고칠 수 있다고 합니다!",
+    "options": [
+      {
+        "label": "산길을 안전하게 만들어준다",
+        "cost": { "faith": 4 },
+        "success_rate": 0.8,
+        "result_text_success": "여신님의 보호로 안전하게 약초를 구해 마을 사람들이 건강해졌습니다!",
+        "result_text_failure": "길은 안전했지만 약초를 찾지 못했습니다.",
+        "success_reward": { "population": 4, "faith": 2, "food": 1 },
+        "failure_reward": { "faith": -2, "food": -1 }
+      },
+      {
+        "label": "위험하니 포기하도록 한다",
+        "cost": {},
+        "success_rate": 1.0,
+        "result_text_success": "할머니가 여신님의 뜻을 따라 안전을 택했습니다.",
+        "result_text_failure": "",
+        "success_reward": { "faith": 1 },
+        "failure_reward": {}
+      }
+    ]
   },
   {
-	"id": 100,
-	"type": "special",
-	"title": "여신 반란",
-	"text": "여신의 존재를 부정하는 이들이 반란을 일으켰습니다!",
-	"options": [
-	  {
-		"label": "신벌을 내린다",
-		"cost": { "faith": 4 },
-		"success_rate": 0.7,
-		"result_text_success": "반란군이 두려움에 무릎 꿇었습니다.",
-		"result_text_failure": "반란군이 오히려 신전을 점거했습니다!",
-		"success_reward": { "faith": 5 },
-		"failure_reward": { "population": -5 }
-	  },
-	  {
-		"label": "협상을 시도한다",
-		"cost": {},
-		"success_rate": 1.0,
-		"result_text_success": "조금 불안하지만 평화롭게 해결되었습니다.",
-		"success_reward": { "faith": 2 },
-		"failure_reward": {}
-	  }
-	]
+    "id": 11,
+    "type": "normal",
+    "title": "첩자 처리",
+    "text": "여신님, 큰 문제가 생겼나이다! 적국의 첩자를 잡았는데, 그 자가 무릎을 꿇고 여신님께 귀의하겠다고 애원하고 있나이다. 진심인지 거짓인지 알 수가 없습니다!",
+    "options": [
+      {
+        "label": "첩자의 마음을 들여다본다",
+        "cost": { "faith": 3 },
+        "success_rate": 0.8,
+        "result_text_success": "여신님의 통찰로 첩자가 진심으로 회개했음을 알고 용서했습니다!",
+        "result_text_failure": "마음을 읽으려 했지만 첩자가 교활해서 속내를 감췄습니다.",
+        "success_reward": { "faith": 3, "population": 1 },
+        "failure_reward": { "faith": -2 }
+      },
+      {
+        "label": "추방하되 자비를 베푼다",
+        "cost": { "faith": 1 },
+        "success_rate": 1.0,
+        "result_text_success": "첩자를 추방했지만 온정을 베풀어 신도들이 여신님의 자비에 감동했습니다.",
+        "result_text_failure": "",
+        "success_reward": { "faith": 2 },
+        "failure_reward": {}
+      },
+      {
+        "label": "신도들이 스스로 판단하게 한다",
+        "cost": {},
+        "success_rate": 0.6,
+        "result_text_success": "신도들이 현명하게 첩자를 용서하고 감화시켰습니다!",
+        "result_text_failure": "신도들이 의견이 갈려 마을에 불화가 생겼습니다.",
+        "success_reward": { "faith": 3 },
+        "failure_reward": { "faith": -3 }
+      }
+    ]
   },
   {
-	"id": 101,
-	"type": "special",
-	"title": "교류 차단 고민",
-	"text": "옆 마을에 이상한 병이 돌아옵니다. 문을 닫아야 할까요?",
-	"options": [
-	  {
-		"label": "문을 닫는다",
-		"cost": {},
-		"success_rate": 1.0,
-		"result_text_success": "병은 퍼지지 않았지만 마을 분위기가 침체되었습니다.",
-		"success_reward": {},
-		"failure_reward": {}
-	  },
-	  {
-		"label": "아무 일 없던 척...",
-		"cost": {},
-		"success_rate": 0.6,
-		"result_text_success": "다행히 병이 퍼지지 않았습니다.",
-		"result_text_failure": "사람들이 하나둘씩 쓰러지기 시작합니다...",
-		"success_reward": {},
-		"failure_reward": { "population": -5 }
-	  }
-	]
+    "id": 12,
+    "type": "normal",
+    "title": "이교도 수용",
+    "text": "자비로우신 여신님, 다른 신을 믿던 이교도들이 찾아와 '우리도 받아달라'고 애원하고 있나이다. 하지만 기존 신도들은 '순수성이 훼손된다'며 반대하고 있습니다!",
+    "options": [
+      {
+        "label": "포용의 마음으로 받아들인다",
+        "cost": { "faith": 2 },
+        "success_rate": 0.7,
+        "result_text_success": "여신님의 포용력으로 이교도들이 진심으로 개종하여 신앙이 더욱 번성했습니다!",
+        "result_text_failure": "이교도들을 받아들였지만 기존 신도들이 불만을 품었습니다.",
+        "success_reward": { "population": 4, "faith": 3 },
+        "failure_reward": { "population": 3, "faith": -2 }
+      },
+      {
+        "label": "시험을 거쳐 진정성을 확인한다",
+        "cost": { "faith": 3 },
+        "success_rate": 0.8,
+        "result_text_success": "엄격한 시험을 통과한 이교도들이 모범적인 신도가 되었습니다!",
+        "result_text_failure": "시험은 실시했지만 일부가 탈락하여 원한을 샀습니다.",
+        "success_reward": { "population": 3, "faith": 5 },
+        "failure_reward": { "faith": -1 }
+      },
+      {
+        "label": "정중히 거절한다",
+        "cost": {},
+        "success_rate": 1.0,
+        "result_text_success": "기존 신도들이 여신님의 신중함에 만족했습니다.",
+        "result_text_failure": "",
+        "success_reward": { "faith": 2 },
+        "failure_reward": {}
+      }
+    ]
   },
   {
-	"id": 102,
-	"type": "special",
-	"title": "화산 폭발",
-	"text": "불의 여신이 질투심에 화산을 터뜨렸습니다. 빨리 대처해야 합니다!",
-	"options": [
-	  {
-		"label": "방어벽을 만든다",
-		"cost": { "faith": 5 },
-		"success_rate": 0.8,
-		"result_text_success": "용암이 신전 앞에서 멈췄습니다!",
-		"result_text_failure": "방어벽이 무너졌습니다...",
-		"success_reward": {},
-		"failure_reward": { "population": -8 }
-	  },
-	  {
-		"label": "기도를 올린다",
-		"cost": { "faith": 3 },
-		"success_rate": 0.5,
-		"result_text_success": "하늘에서 비가 내려 화산을 잠재웠습니다!",
-		"result_text_failure": "아무 일도 일어나지 않았습니다.",
-		"success_reward": { "faith": 4 },
-		"failure_reward": { "faith": -2 }
-	  }
-	]
+    "id": 13,
+    "type": "normal",
+    "title": "신전 수리",
+    "text": "여신님, 신전이 낡아서 지붕에서 물이 새고 기둥이 흔들린다나이다! 신도들이 걱정하고 있나이다!",
+    "options": [
+      {
+        "label": "신전을 신비한 힘으로 새것같이 만든다",
+        "cost": { "faith": 5 },
+        "success_rate": 0.9,
+        "result_text_success": "여신님의 기적으로 신전이 찬란하게 새롭게 태어났습니다! 신전에 감탄하여 새로운 신도들이 생겼습니다.",
+        "result_text_failure": "수리는 했지만 완전하지 않아 여전히 약간 삐걱거립니다.",
+        "success_reward": { "faith": 5, "population": 3 },
+        "failure_reward": { "faith": 2 }
+      },
+      {
+        "label": "신도들의 정성으로 수리하게 한다",
+        "cost": { "food": 2 },
+        "success_rate": 0.8,
+        "result_text_success": "신도들이 정성껏 수리한 신전이 더욱 아름다워졌습니다!",
+        "result_text_failure": "신도들이 최선을 다했지만 기술이 부족해 어설프게 수리됐습니다.",
+        "success_reward": { "faith": 3, "population": 1 },
+        "failure_reward": { "faith": -1 }
+      }
+    ]
   },
   {
-	"id": 103,
-	"type": "special",
-	"title": "망령 침입",
-	"text": "고대 전쟁의 망령들이 마을을 떠돌고 있습니다.",
-	"options": [
-	  {
-		"label": "정화 의식을 치른다",
-		"cost": { "faith": 4 },
-		"success_rate": 0.7,
-		"result_text_success": "영혼들이 평온하게 돌아갔습니다.",
-		"result_text_failure": "의식 도중 귀신이 깜짝 등장했습니다!",
-		"success_reward": { "faith": 3 },
-		"failure_reward": { "faith": -2 }
-	  },
-	  {
-		"label": "그냥 모른 척한다",
-		"cost": {},
-		"success_rate": 1.0,
-		"result_text_success": "밤마다 괴상한 소리가 나긴 하지만 큰 피해는 없었습니다.",
-		"success_reward": {},
-		"failure_reward": {}
-	  }
-	]
+    "id": 14,
+    "type": "normal",
+    "title": "순례자 방문",
+    "text": "기쁜 소식이옵니다, 여신님! 먼 곳에서 순례자들이 여신님을 뵙고자 찾아왔나이다. 하지만 숫자가 너무 많아 마을이 북적거리고 있습니다!",
+    "options": [
+      {
+        "label": "순례자들에게 특별한 축복을 내려준다",
+        "cost": { "faith": 5 },
+        "success_rate": 0.8,
+        "result_text_success": "여신님의 특별한 축복에 순례자들이 감격하였습니다. 순례자들이 이국의 지혜를 알려주어 농부들이 더 많은 작물을 수확할 수 있게 되었습니다.",
+        "result_text_failure": "축복을 내렸지만 순례자가 너무 많아 모두에게 닿지 못했습니다.",
+        "success_reward": { "faith": 6, "population": 3, "food": 3 },
+        "failure_reward": { "faith": 2, "population": 1 }
+      },
+      {
+        "label": "순례자들을 정중히 맞이한다",
+        "cost": { "faith": 1 },
+        "success_rate": 1.0,
+        "result_text_success": "순례자들이 여신님의 정중한 맞이에 만족하고 돌아갔습니다.",
+        "result_text_failure": "",
+        "success_reward": { "faith": 3 },
+        "failure_reward": {}
+      },
+      {
+        "label": "신도들이 순례자를 잘 돌보게 한다",
+        "cost": {},
+        "success_rate": 0.7,
+        "result_text_success": "신도들의 극진한 대접에 순례자들이 감동했습니다!",
+        "result_text_failure": "신도들이 순례자를 돌봤지만 일부는 불편함을 겪었습니다.",
+        "success_reward": { "faith": 2, "population": 1 },
+        "failure_reward": { "faith": -1 }
+      }
+    ]
   },
   {
-	"id": 104,
-	"type": "special",
-	"title": "뜨지 않는 태양",
-	"text": "태양이 지평선에서 떠오르지 않습니다. 신도들이 공포에 떨고 있습니다.",
-	"options": [
-	  {
-		"label": "희망의 기도를 전한다",
-		"cost": { "faith": 2 },
-		"success_rate": 1.0,
-		"result_text_success": "신도들이 안정을 되찾았습니다.",
-		"success_reward": { "faith": 2 },
-		"failure_reward": {}
-	  },
-	  {
-		"label": "원인을 찾으러 보낸다",
-		"cost": {},
-		"success_rate": 0.5,
-		"result_text_success": "탐험대가 원인을 밝혔고, 태양이 다시 떴습니다!",
-		"result_text_failure": "탐험대는 돌아오지 않았습니다...",
-		"success_reward": { "faith": 3 },
-		"failure_reward": { "population": -3 }
-	  }
-	]
+    "id": 15,
+    "type": "normal",
+    "title": "기도 시간 증가",
+    "text": "여신님, 신도들이 '하루 세 번 기도로는 부족하다! 다섯 번으로 늘리자!'고 제안하고 있나이다. 하지만 일부는 '그럼 일할 시간이 없다'며 반대합니다!",
+    "options": [
+      {
+        "label": "기도 시간을 늘려준다",
+        "cost": { "faith": 1 },
+        "success_rate": 0.6,
+        "result_text_success": "기도 시간이 늘어나 신도들의 신심이 더욱 깊어졌습니다!",
+        "result_text_failure": "일부 신도가 늘어난 기도 시간에 불만을 느껴 마을을 떠났습니다.",
+        "success_reward": { "faith": 5, "food": -3 },
+        "failure_reward": { "population": -2 }
+      },
+      {
+        "label": "현재 기도 시간이 적당하다고 한다",
+        "cost": {},
+        "success_rate": 1.0,
+        "result_text_success": "신도들이 여신님의 지혜로운 판단에 납득했습니다.",
+        "result_text_failure": "",
+        "success_reward": { "faith": 2 },
+        "failure_reward": {}
+      }
+    ]
   },
   {
-	"id": 200,
-	"type": "miracle",
-	"title": "황금빛 나무",
-	"text": "신전 옆에 반짝이는 황금빛 나무가 자라났습니다!",
-	"options": [
-	  {
-		"label": "열매를 수확한다",
-		"cost": {},
-		"success_rate": 1.0,
-		"result_text_success": "열매에서 금 조각이 쏟아졌습니다!",
-		"success_reward": { "food": 10, "faith": 3 },
-		"failure_reward": {}
-	  },
-	  {
-		"label": "신성한 존재로 모신다",
-		"cost": { "faith": 2 },
-		"success_rate": 1.0,
-		"result_text_success": "신도들의 신앙이 크게 높아졌습니다.",
-		"success_reward": { "faith": 6 },
-		"failure_reward": {}
-	  }
-	]
+    "id": 16,
+    "type": "special",
+    "title": "종파 분열",
+    "text": "여신님, 신도들이 '아침 기도파'와 '저녁 기도파'로 나뉘어 서로 '우리가 진짜 신도다!'라며 물고 뜯고 싸우고 있나이다! 심지어 신전 앞에서 기도 시간대를 두고 줄다리기까지 하고 있습니다!",
+    "options": [
+      {
+        "label": "24시간 릴레이 기도를 제안한다",
+        "cost": { "faith": 2 },
+        "success_rate": 0.8,
+        "result_text_success": "아침파는 새벽~오후, 저녁파는 오후~새벽을 담당하는 완벽한 24시간 기도 시스템이 완성되었습니다!",
+        "result_text_failure": "릴레이 기도를 시작했지만 누가 더 오래 기도하는지로 또 다투기 시작했습니다.",
+        "success_reward": { "faith": 4 },
+        "failure_reward": { "faith": -2 }
+      },
+      {
+        "label": "그냥 내버려 둔다",
+        "cost": {},
+        "success_rate": 0.3,
+        "result_text_success": "신도들이 자연스럽게 합의점을 찾았습니다. 이제 모든 기도는 점심에 이루어집니다.",
+        "result_text_failure": "구경만 하고 있으니 신도들이 '여신님이 우리를 포기했다!'며 더욱 절망적으로 싸웠습니다.",
+        "success_reward": { "faith": 2 },
+        "failure_reward": { "faith": -2, "population": -1 }
+      }
+    ]
   },
   {
-	"id": 201,
-	"type": "miracle",
-	"title": "신의 반려동물",
-	"text": "커다란 용이 나타나 당신의 애완동물이 되고 싶다 합니다.",
-	"options": [
-	  {
-		"label": "받아들인다",
-		"cost": {},
-		"success_rate": 1.0,
-		"result_text_success": "신도들이 흥분해서 더 열심히 일합니다.",
-		"success_reward": { "faith": 5, "food": 5 },
-		"failure_reward": {}
-	  },
-	  {
-		"label": "너무 부담스럽다",
-		"cost": {},
-		"success_rate": 1.0,
-		"result_text_success": "용은 실망했지만, 마을은 평온합니다.",
-		"success_reward": {},
-		"failure_reward": {}
-	  }
-	]
+    "id": 17,
+    "type": "normal",
+    "title": "신상 항의",
+    "text": "여신님, 한 신도가 신상 앞에서 '이 신상이 여신님의 아름다움을 제대로 표현하지 못한다!'며 항의하고 있나이다. 다른 신도들도 웅성거리고 있습니다!",
+    "options": [
+      {
+        "label": "신상을 더 아름답게 바꾼다.",
+        "cost": { "faith": 3 },
+        "success_rate": 0.8,
+        "result_text_success": "아름다운 신상에 모두가 감탄합니다. 여신님의 미모에 감화되어 새 신도들이 생겼습니다.",
+        "result_text_failure": "신상을 바꿨지만 취향이 달라 여전히 불만인 신도들이 있습니다.",
+        "success_reward": { "faith": 4, "population": 3 },
+        "failure_reward": { "faith": -1, "population": -1 }
+      },
+      {
+        "label": "외모보다 마음이 중요하다는 신탁을 내린다",
+        "cost": {},
+        "success_rate": 1.0,
+        "result_text_success": "신도들이 여신님의 가르침에 깊이 깨달았습니다.",
+        "result_text_failure": "",
+        "success_reward": { "faith": 3 },
+        "failure_reward": {}
+      }
+    ]
   },
   {
-	"id": 202,
-	"type": "miracle",
-	"title": "마법의 샘물",
-	"text": "숲속 요정들이 마법의 샘을 당신에게 바쳤습니다.",
-	"options": [
-	  {
-		"label": "모두에게 나눠준다",
-		"cost": {},
-		"success_rate": 1.0,
-		"result_text_success": "마을 사람들이 건강해졌습니다!",
-		"success_reward": { "population": 5, "faith": 2 },
-		"failure_reward": {}
-	  },
-	  {
-		"label": "신전 안에 모신다",
-		"cost": {},
-		"success_rate": 1.0,
-		"result_text_success": "영험한 기운이 퍼지며 신앙이 깊어졌습니다.",
-		"success_reward": { "faith": 6 },
-		"failure_reward": {}
-	  }
-	]
+    "id": 18,
+    "type": "normal",
+    "title": "기도 중독자",
+    "text": "여신님, 이상한 일이 일어났나이다! 한 신도가 하루에 1000번 기도를 하겠다며 밤낮없이 기도만 하고 있나이다. 가족들이 걱정하고 있습니다!",
+    "options": [
+      {
+        "label": "혀에 ‘자동 기도 방지’ 마법을 건다",
+        "cost": { "faith": 2 },
+        "success_rate": 1.0,
+        "result_text_success": "이제 신도는 하루 100번 기도하려 하면 딸국질이 납니다. 가족들이 안심했습니다.",
+        "result_text_failure": "마법이 잘못 걸려 신도가 하루종일 딸꾹질을 하게 되었습니다. 가족들이 걱정합니다.",
+        "success_reward": { "faith": 2, "food": 1 },
+        "failure_reward": { "faith": -2 }
+      },
+      {
+        "label": "적당히 하라고 계시를 내린다",
+        "cost": {},
+        "success_rate": 0.8,
+        "result_text_success": "여신님의 계시로 신도가 적당한 기도의 중요성을 깨달았습니다!",
+        "result_text_failure": "계시를 내렸지만 신도가 '더 기도해야 한다'며 오해했습니다.",
+        "success_reward": { "faith": 2 },
+        "failure_reward": { "faith": -1 }
+      }
+    ]
   },
   {
-	"id": 203,
-	"type": "miracle",
-	"title": "하늘에서 떨어진 알",
-	"text": "거대한 황금빛 알이 신전 앞에 떨어졌습니다.",
-	"options": [
-	  {
-		"label": "부화시켜 본다",
-		"cost": { "faith": 3 },
-		"success_rate": 0.8,
-		"result_text_success": "신성한 새가 태어나 마을을 지키고 있습니다.",
-		"result_text_failure": "안에서 아무것도 나오지 않았습니다.",
-		"success_reward": { "faith": 5, "population": 2 },
-		"failure_reward": {}
-	  },
-	  {
-		"label": "장식품으로 둔다",
-		"cost": {},
-		"success_rate": 1.0,
-		"result_text_success": "눈부셔서 모두가 기분이 좋아졌습니다.",
-		"success_reward": { "faith": 2 },
-		"failure_reward": {}
-	  }
-	]
+    "id": 19,
+    "type": "normal",
+    "title": "야옹야옹 야옹교",
+    "text": "여신님, 웃지 못할 일이 일어났나이다! 일부 신도들이 고양이를 신이라며 숭배하기 시작했나이다. '야옹교'라는 이상한 종파까지 만들었습니다!",
+    "options": [
+      {
+        "label": "고양이에게 실제로 신성함을 부여한다",
+        "cost": { "faith": 4 },
+        "success_rate": 0.6,
+        "result_text_success": "여신님의 축복으로 고양이가 정말 신비한 능력을 갖게 되어 고양이 여신이 되었습니다. 고양이 여신은 당신을 섬깁니다.",
+        "result_text_failure": "고양이를 축복했지만 그냥 평범한 고양이로 남아있습니다.",
+        "success_reward": { "faith": 5, "population": 3, "food": 3 },
+        "failure_reward": { "faith": -2, "food": -1 }
+      },
+      {
+        "label": "그냥 재미있게 지켜본다",
+        "cost": {},
+        "success_rate": 1.0,
+        "result_text_success": "야용교는 점점 커져서 분파를 만들었습니다. 불만을 품은 일부 신도들이 떠났습니다.",
+        "result_text_failure": "",
+        "success_reward": { "faith": -1, "population": -3 },
+        "failure_reward": {}
+      }
+    ]
   },
   {
-	"id": 204,
-	"type": "miracle",
-	"title": "남신의 고백",
-	"text": "남신이 당신에게 구애하며 대지를 축복하겠다고 합니다.",
-	"options": [
-	  {
-		"label": "받아들인다",
-		"cost": {},
-		"success_rate": 1.0,
-		"result_text_success": "하늘에서 꽃비가 내리고 작물은 넘쳐납니다!",
-		"success_reward": { "food": 10, "faith": 4 },
-		"failure_reward": {}
-	  },
-	  {
-		"label": "단호히 거절한다",
-		"cost": {},
-		"success_rate": 1.0,
-		"result_text_success": "남신은 눈물을 흘리며 돌아갔습니다... 그래도 존중을 보냈습니다.",
-		"success_reward": { "faith": 2 },
-		"failure_reward": {}
-	  }
-	]
+    "id": 20,
+    "type": "special",
+    "title": "세대 갈등",
+    "text": "여신님, 심각한 문제가 생겼나이다! 젊은 신도들이 '전통 의식은 구식이다! 새로운 방식으로 바꾸자!'며 반발하고 있나이다. 원로들은 '전통을 지켜야 한다'며 맞서고 있습니다!",
+    "options": [
+      {
+        "label": "전통과 혁신을 조화시킨 새로운 의식을 만든다",
+        "cost": { "faith": 3 },
+        "success_rate": 0.8,
+        "result_text_success": "여신님의 지혜로 전통의 정신을 담은 새로운 의식이 탄생했습니다!",
+        "result_text_failure": "새 의식을 만들었지만 양측 모두 완전히 만족하지 못했습니다.",
+        "success_reward": { "faith": 5, "population": 3 },
+        "failure_reward": { "faith": -2, "population": -1 }
+      },
+      {
+        "label": "각자 원하는 방식으로 하게 둔다",
+        "cost": {},
+        "success_rate": 0.5,
+        "result_text_success": "다양성을 인정하니 오히려 신앙이 더 풍성해졌습니다!",
+        "result_text_failure": "자유를 허용했지만 혼란만 가중되었습니다.",
+        "success_reward": { "faith": 2 },
+        "failure_reward": { "faith": -2, "population": -1 }
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "type": "normal",
+    "title": "거짓 예언자",
+    "text": "여신님, 수상한 일이 벌어졌나이다! 외지에서 온 수염이 허연 예언자가 '진정한 여신의 새로운 계시를 받았다!'며 이상한 교리를 퍼뜨리고 있나이다. 신도들이 혹하고 있습니다!",
+    "options": [
+      {
+        "label": "가짜 예언자임을 직접 폭로한다",
+        "cost": { "faith": 2 },
+        "success_rate": 0.8,
+        "result_text_success": "여신님의 진짜 기적을 보고 가짜 예언자가 꼬리를 내렸습니다!",
+        "result_text_failure": "폭로했지만 예언자가 '이것도 시험이다!'라며 오히려 더 설득력을 얻었습니다.",
+        "success_reward": { "faith": 4, "population": 1 },
+        "failure_reward": { "faith": -3 }
+      },
+      {
+        "label": "예언자에게 진짜 계시를 내려준다",
+        "cost": { "faith": 4 },
+        "success_rate": 0.7,
+        "result_text_success": "갑작스러운 진짜 계시에 예언자가 감동하여 진정한 전도사가 되었습니다!",
+        "result_text_failure": "계시를 내렸지만 예언자가 자기 식으로 해석해서 더 이상해졌습니다.",
+        "success_reward": { "faith": 6, "population": 3 },
+        "failure_reward": { "faith": -2 }
+      },
+      {
+        "label": "신도들이 스스로 판단하게 한다",
+        "cost": {},
+        "success_rate": 0.5,
+        "result_text_success": "신도들이 현명하게 가짜를 구별해내고 예언자를 쫓아냈습니다!",
+        "result_text_failure": "일부 신도들이 예언자를 따라가며 마을을 떠났습니다.",
+        "success_reward": { "faith": 4 },
+        "failure_reward": { "faith": -2, "population": -3 }
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "type": "normal",
+    "title": "성전 건설",
+    "text": "여신님, 기쁜 소식이옵니다! 새로운 성전을 지을 예정인데 어디에 지을지 결정해달라나이다. 언덕 위는 멋있지만 올라가기 힘들고, 마을 한복판은 편하지만 시끄럽습니다!",
+    "options": [
+      {
+        "label": "장엄한 언덕 위에 짓는다",
+        "cost": {},
+        "success_rate": 0.8,
+        "result_text_success": "언덕 위에 세워진 성전이 마을의 상징이 되어 멀리서도 보입니다!",
+        "result_text_failure": "언덕에 지었지만 너무 높아서 나이든 신도들이 올라오기 힘들어합니다.",
+        "success_reward": { "faith": 4, "population": 2 },
+        "failure_reward": { "faith": 1, "population": -2 }
+      },
+      {
+        "label": "마을 중심가에 짓는다",
+        "cost": {},
+        "success_rate": 0.7,
+        "result_text_success": "마을 중심의 성전이 일상 속 신앙의 중심지가 되었습니다!",
+        "result_text_failure": "중심가에 지었지만 시장 소음 때문에 기도에 집중하기 어렵습니다.",
+        "success_reward": { "faith": 2, "population": 4 },
+        "failure_reward": { "faith": -2, "population": 1 }
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "type": "normal",
+    "title": "종교 축제",
+    "text": "여신님, 신도들이 '올해는 대규모 종교 축제를 열어 여신님의 영광을 널리 알리자!'고 제안하고 있나이다. 하지만 준비가 엄청 복잡하고 비용도 많이 든다고 합니다!",
+    "options": [
+      {
+        "label": "성대한 축제가 되도록 축복한다",
+        "cost": { "faith": 4 },
+        "success_rate": 0.8,
+        "result_text_success": "여신님의 축복으로 역사에 남을 환상적인 축제가 열렸습니다!",
+        "result_text_failure": "축복했지만 비가 내려서 축제가 엉망이 되었습니다.",
+        "success_reward": { "faith": 8, "population": 5, "food": -3 },
+        "failure_reward": { "faith": -1 }
+      },
+      {
+        "label": "올해는 축제 대신 기도회로 대신한다",
+        "cost": {},
+        "success_rate": 0.7,
+        "result_text_success": "조용한 기도회가 오히려 신도들의 마음을 하나로 모았습니다!",
+        "result_text_failure": "기도회를 했지만 신도들이 축제를 기대했던 터라 아쉬워했습니다.",
+        "success_reward": { "faith": 3 },
+        "failure_reward": { "faith": -1 }
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "type": "normal",
+    "title": "결혼 요청",
+    "text": "여신님, 귀족 집 아들과 평민 집 딸이 서로 사랑해서 결혼하고 싶어 하나이다. 하지만 양가 부모들이 '신분이 다르다!'며 반대하고 있습니다!",
+    "options": [
+      {
+        "label": "사랑 앞에 신분은 무의미하다고 축복한다",
+        "cost": { "faith": 3 },
+        "success_rate": 0.8,
+        "result_text_success": "여신님의 축복으로 두 사람이 행복한 결혼을 하고 마을의 로맨스 전설이 되었습니다!",
+        "result_text_failure": "축복했지만 양가 갈등이 더 심해져서 마을에 불화가 생겼습니다.",
+        "success_reward": { "faith": 5, "population": 3 },
+        "failure_reward": { "faith": -2, "population": -1 }
+      },
+      {
+        "label": "시험을 통해 진정한 사랑인지 확인한다",
+        "cost": { "faith": 2 },
+        "success_rate": 0.7,
+        "result_text_success": "시험을 통과한 두 사람의 사랑이 모든 이의 마음을 움직였습니다!",
+        "result_text_failure": "시험 과정에서 두 사람이 지치고 갈등이 생겼습니다. 결국 결혼이 무산되었습니다.",
+        "success_reward": { "faith": 4, "population": 1 },
+        "failure_reward": { "faith": -1 }
+      },
+      {
+        "label": "결혼을 반대한다",
+        "cost": {},
+        "success_rate": 0.6,
+        "result_text_success": "여신님의 뜻을 받아들여 두 남녀가 결혼을 포기했습니다. 양가 부모들이 기뻐합니다.",
+        "result_text_failure": "결혼 반대에 상심한 두 남녀가 목숨을 끊었습니다. 양가 부모들이 슬퍼합니다.",
+        "success_reward": { "faith": 3 },
+        "failure_reward": { "faith": -2, "population": -2 }
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "type": "normal",
+    "title": "대도둑 체포",
+    "text": "여신님, 마침내 악명 높은 대도둑을 잡았나이다! 그런데 그 자가 '훔친 돈은 모두 가난한 사람들에게 나눠줬다'고 주장하고 있나이다. 사실인지 거짓인지 알 수가 없습니다!",
+    "options": [
+      {
+        "label": "도둑의 마음을 들여다본다",
+        "cost": { "faith": 3 },
+        "success_rate": 0.8,
+        "result_text_success": "정말로 선한 마음이었음을 확인하고 의로운 일을 하도록 이끌어주었습니다!",
+        "result_text_failure": "마음을 읽으려 했지만 도둑이 교활한 거짓말쟁이였습니다.",
+        "success_reward": { "faith": 4, "population": 2, "food": 2 },
+        "failure_reward": { "faith": -2 }
+      },
+      {
+        "label": "훔친 재물을 되찾아 정당하게 분배하게 한다.",
+        "cost": { "faith": 1 },
+        "success_rate": 0.7,
+        "result_text_success": "여신님의 공정한 분배로 가난한 이들과 피해자 모두가 만족했습니다!",
+        "result_text_failure": "재물을 찾으려 했지만 이미 다 써버렸거나 숨겨놔서 찾을 수 없었습니다.",
+        "success_reward": { "faith": 3, "food": 3 },
+        "failure_reward": { "faith": -2 }
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "type": "normal",
+    "title": "외교 제안",
+    "text": "여신님, 인근 왕국에서 사신이 와서 '우리도 여신님의 가르침을 배우고 싶다'며 문화 교류를 제안했나이다. 하지만 그들은 다른 신을 믿는 이교도들입니다!",
+    "options": [
+      {
+        "label": "기꺼이 교류하며 가르침을 전파한다",
+        "cost": {},
+        "success_rate": 0.8,
+        "result_text_success": "문화 교류로 여신님의 명성이 널리 퍼지고 평화로운 관계가 형성되었습니다!",
+        "result_text_failure": "교류를 시작했지만 종교 갈등이 생겨 관계가 어색해졌습니다.",
+        "success_reward": { "faith": 3, "population": 2, "food": 1 },
+        "failure_reward": { "faith": -2 }
+      },
+      {
+        "label": "조건부로 교류를 허가한다",
+        "cost": {},
+        "success_rate": 0.7,
+        "result_text_success": "신중한 교류로 서로의 문화를 존중하며 좋은 관계를 맺었습니다!",
+        "result_text_failure": "조건이 까다로워서 상대방이 불쾌해하며 제안을 철회했습니다.",
+        "success_reward": { "faith": 3, "food": 3 },
+        "failure_reward": { "faith": -2 }
+      },
+      {
+        "label": "정중히 거절한다",
+        "cost": {},
+        "success_rate": 0.7,
+        "result_text_success": "정중한 거절로 상대방도 이해하며 평화로운 관계를 유지했습니다.",
+        "result_text_failure": "상대방이 불쾌해하며 전쟁을 선포했습니다.",
+        "success_reward": { "faith": 2 },
+        "failure_reward": { "faith": -2, "population": -3, "food": -3 }
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "type": "normal",
+    "title": "길 안내 요청",
+    "text": "여신님, 길을 잃은 나그네가 찾아와 '위험한 산길을 안전하게 건널 방법을 알려달라'고 간청하고 있나이다. 하지만 그 길엔 맹수와 산적들이 우글거린다고 합니다!",
+    "options": [
+      {
+        "label": "안전한 길을 만들어준다",
+        "cost": { "faith": 3 },
+        "success_rate": 0.8,
+        "result_text_success": "여신님의 힘으로 안전한 길이 열려 나그네가 무사히 도착했습니다! 감동한 나그네가 여신님꼐 공물을 바칩니다.",
+        "result_text_failure": "길을 만들려 했지만 일시적이어서 중간에 다시 험해졌습니다. 나그네가 길을 잃고 말았습니다.",
+        "success_reward": { "faith": 5, "population": 1, "food": 2 },
+        "failure_reward": { "faith": -2 }
+      },
+      {
+        "label": "수호 동물을 보내 함께 가게 한다",
+        "cost": { "faith": 3 },
+        "success_rate": 0.7,
+        "result_text_success": "신비한 늑대가 나타나 나그네를 안전하게 인도했습니다! 감동한 나그네가 여신님꼐 공물을 바칩니다.",
+        "result_text_failure": "동물을 보냈지만 길에서 도망가서 나그네 혼자 가게 되었습니다.",
+        "success_reward": { "faith": 4, "food": 2 },
+        "failure_reward": { "faith": -2, "food": -1 }
+      },
+      {
+        "label": "마을 사람들이 안내하도록 한다",
+        "cost": {},
+        "success_rate": 0.6,
+        "result_text_success": "마을의 베테랑 사냥꾼들이 나그네를 안전하게 안내했습니다!",
+        "result_text_failure": "안내를 자원한 사람이 없어서 나그네가 실망했습니다.",
+        "success_reward": { "faith": 3, "population": 1 },
+        "failure_reward": { "faith": -1 }
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "type": "normal",
+    "title": "천상의 요리",
+    "text": "여신님, 마을 최고의 요리사가 찾아와 '전설의 신의 요리법을 알려달라'고 애원하고 있나이다. '그 요리를 만들면 모든 이의 마음을 치유할 수 있다'고 믿고 있습니다!",
+    "options": [
+      {
+        "label": "진짜 천상의 레시피를 내려준다",
+        "cost": { "faith": 4 },
+        "success_rate": 0.8,
+        "result_text_success": "신의 레시피가 담긴 찬란한 두루마리를 펼치자, 요리사는 울음을 터뜨리며 솥을 휘젓습니다. 완성된 수프는 먹는 순간, 어릴 적 추억이 떠오를 만큼 감동적이었습니다.",
+        "result_text_failure": "레시피를 전했지만 요리사가 실수로 소금을 다섯 배나 넣었습니다. 결과물은... 바닷물보다 짠 수프.",
+        "success_reward": { "faith": 6, "population": 3, "food": 3 },
+        "failure_reward": { "faith": -1, "food": -1 }
+      },
+      {
+        "label": "이미 훌륭하다며 미소를 건넨다",
+        "cost": {},
+        "success_rate": 0.7,
+        "result_text_success": "여신님의 미소 한 줄기에 용기를 얻은 요리사는 더욱 열정적으로 칼을 들었습니다. 마을 식탁이 풍성해졌습니다!",
+        "result_text_failure": "격려는 받았지만 요리사는 '뭔가 아쉬워요'라며 고개를 떨굽니다.",
+        "success_reward": { "faith": 1, "food": 2 },
+        "failure_reward": { "faith": -2 }
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "type": "special",
+    "title": "큐피드 파업",
+    "text": "여신님, 심각한 문제가 발생했나이다! 사랑의 천사들이 '과로에 시달린다'며 파업을 선언했나이다! 덕분에 마을의 연애 성사율이 급격히 떨어지고, 커플들이 헤어지고 있습니다!",
+    "options": [
+      {
+        "label": "천사들의 근무 조건을 개선해준다",
+        "cost": { "faith": 5 },
+        "success_rate": 0.8,
+        "result_text_success": "천사들이 파업을 마치고 더욱 열심히 일해 마을에 사랑이 넘쳐났습니다!",
+        "result_text_failure": "조건을 개선했지만 천사들이 '더 필요하다'며 추가 요구를 했습니다.",
+        "success_reward": { "faith": 7, "population": 5 },
+        "failure_reward": { "faith": -2 }
+      },
+      {
+        "label": "직접 사랑의 화살을 쏘며 대신 일한다",
+        "cost": {},
+        "success_rate": 0.9,
+        "result_text_success": "여신님이 직접 나서니 천사들이 감동해서 파업을 중단하고 더욱 열심히 일했습니다!",
+        "result_text_failure": "직접 일했지만 너무 바빠서 실수가 생겨 엉뚱한 사람들끼리 엮였습니다.",
+        "success_reward": { "faith": 3, "population": 3 },
+        "failure_reward": { "faith": -2, "population": -1 }
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "type": "special",
+    "title": "제물 의식",
+    "text": "여신님, 마을에 소란이 크나이다! 광신도들이 '가장 아름다운 청년을 제물로 바치자'며 이상한 제단을 세우고 있나이다!",
+    "options": [
+      {
+        "label": "단호하게 금지하고 제단을 부순다",
+        "cost": { "faith": 3 },
+        "success_rate": 0.9,
+        "result_text_success": "여신님의 천둥 같은 음성이 마을에 울려 퍼졌습니다. 광신도들은 혼비백산 도망쳤습니다!",
+        "result_text_failure": "제단을 부쉈지만 일부 광신도들이 여신의 뜻을 왜곡했다며 떠들고 있습니다.",
+        "success_reward": { "faith": 5, "population": 2 },
+        "failure_reward": { "faith": -2 }
+      },
+      {
+        "label": "제물을 받아들인다. (음, 정말?)",
+        "cost": {},
+        "success_rate": 0.1,
+        "result_text_success": "청년이 신성의 힘에 눈을 떴습니다. '남신'이라며 돌아다니며 신도들을 돕고 있습니다. (본인 주장)",
+        "result_text_failure": "의식은 실패하고, 청년 팬클럽이 여신께 격하게 항의했습니다.",
+        "success_reward": { "faith": 8, "population": 5, "food": 3 },
+        "failure_reward": { "faith": -2, "population": -2 }
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "type": "normal",
+    "title": "정체불명의 발명품",
+    "text": "여신님, 한 학자가 '모든 문제를 해결하는 기계'라며 이상한 발명품을 들고와 시연을 요청하나이다! 신도들은 기대 반, 걱정 반으로 몰려들고 있습니다.",
+    "options": [
+      {
+        "label": "직접 기계에 신력을 부여해준다",
+        "cost": { "faith": 3 },
+        "success_rate": 0.7,
+        "result_text_success": "기계가 갑자기 빛나며 ‘빨래를 개고, 밥을 지으며, 신의 찬가를 부릅니다. 신도들은 일이 줄어들어 행복해합니다.",
+        "result_text_failure": "신력이 과하게 들어가 기계가 폭주해 성전 지붕이 날아갔습니다.",
+        "success_reward": { "faith": 3, "population": 2, "food": 2 },
+        "failure_reward": { "faith": -2 }
+      },
+      {
+        "label": "신성 모독이라는 신탁을 내린다.",
+        "cost": {},
+        "success_rate": 0.5,
+        "result_text_success": "마을 사람들이 신탁을 듣고 분개해 학자의 기계를 부쉈습니다. 학자는 실망하여 마을을 떠났습니다.",
+        "result_text_failure": "마을 사람들이 신탁을 듣고 기계를 부수려 하자 기계가 폭주하여 마을을 쑥대밭으로 만들었습니다.",
+        "success_reward": { "population": -1 },
+        "failure_reward": { "faith": -2, "food": -2 }
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "type": "special",
+    "title": "말하는 염소",
+    "text": "여신님, 염소 한 마리가 갑자기 인간의 말을 하기 시작했습니다! 그것도 유창하게요. 신도들은 신의 사자라며 경배하고 있습니다.",
+    "options": [
+      {
+        "label": "염소를 성전의 대변자로 임명한다",
+        "cost": { "faith": 3 },
+        "success_rate": 0.8,
+        "result_text_success": "염소가 놀라운 연설로 신도를 감동시켜 신앙심이 치솟았습니다!",
+        "result_text_failure": "염소가 갑자기 욕설을 퍼부으며 뛰쳐나갔습니다. 사라졌습니다.",
+        "success_reward": { "faith": 4, "population": 1 },
+        "failure_reward": { "faith": -2 }
+      },
+      {
+        "label": "염소를 조용히 산에 풀어준다",
+        "cost": {},
+        "success_rate": 1.0,
+        "result_text_success": "염소는 풀을 먹으며 평화롭게 지냈습니다. 이제 아무도 말하는 염소를 기억하지 못합니다.",
+        "result_text_failure": "",
+        "success_reward": { "faith": 1, "food": 1 },
+        "failure_reward": {}
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "type": "normal",
+    "title": "인기 폭발 여배우",
+    "text": "여신님, 연극에서 여신님을 연기한 여배우가 너무 인기가 많아 일부 신도가 그녀를 진짜 여신이라 믿고 따르고 있나이다!",
+    "options": [
+      {
+        "label": "여배우에게 축복을 내려 ‘성녀’로 임명한다",
+        "cost": { "faith": 3 },
+        "success_rate": 0.7,
+        "result_text_success": "여배우가 여신님의 계시를 받고 겸허히 성녀가 되어 신도들을 이끌었습니다. 신앙이 더 단단해졌습니다.",
+        "result_text_failure": "축복을 받은 여배우가 자신이 신의 화신이라며 기고만장해져 신도 일부를 데리고 ‘새로운 교단’을 세웠습니다.",
+        "success_reward": { "faith": 5, "population": 2 },
+        "failure_reward": { "faith": -3, "population": -2 }
+      },
+      {
+        "label": "공식적으로 ‘그녀는 배우일 뿐’이라는 계시를 내린다",
+        "cost": {},
+        "success_rate": 0.9,
+        "result_text_success": "신도들이 납득하고 다시 여신님의 성전으로 돌아왔습니다. 여배우는 다음 연극 준비에 들어갔습니다.",
+        "result_text_failure": "여배우가 게시를 무시하고 자신이 신의 화신이라며 신도들을 데리고 새로운 교단을 세웠습니다.",
+        "success_reward": { "faith": 3 },
+        "failure_reward": { "faith": -3, "population": -2 }
+      }
+    ]
+  },
+  {
+    "id": 34,
+    "type": "normal",
+    "title": "좀비 신도",
+    "text": "여신님, 며칠 전 장례를 치른 신도가 멀쩡히 걸어서 집으로 돌아왔나이다! 본인은 '그냥 낮잠 잤다'고 하는데, 마을 사람들은 벌벌 떨고 있습니다.",
+    "options": [
+      {
+        "label": "퇴마의식을 거행한다",
+        "cost": { "faith": 4 },
+        "success_rate": 0.9,
+        "result_text_success": "강력한 퇴마 의식 끝에 신도는 안개처럼 사라졌습니다. 마을에 평화가 돌아왔습니다.",
+        "result_text_failure": "의식 도중 신도가 '또 다른 이도 깨어난다'는 말을 남기고 도망쳤습니다… 신도들이 공포에 떨고 있습니다.",
+        "success_reward": { "faith": 6, "population": 1 },
+        "failure_reward": { "faith": -3 }
+      },
+      {
+        "label": "마을에서 잠시 격리시키고 조용히 넘어간다",
+        "cost": {},
+        "success_rate": 0.5,
+        "result_text_success": "시간이 지나자 사람들은 그를 그냥 '약간 이상한 사람'으로 받아들였습니다.",
+        "result_text_failure": "격리 중 그가 밤마다 무덤을 산책한다는 소문이 돌아 다시 공포에 빠졌습니다.",
+        "success_reward": { "population": 2 },
+        "failure_reward": { "faith": -2, "population": -1 }
+      }
+    ]
+  },
+  {
+    "id": 35,
+    "type": "normal",
+    "title": "시큼해요",
+    "text": "여신님, 포도주의 신이 신주 빚기에 실패하여 모든 포도주가 시큼한 식초가 되어버렸습니다! 축제가 곧 시작되는데, 사람들은 실망과 분노에 차 있습니다!",
+    "options": [
+      {
+        "label": "신력으로 식초를 최고급 포도주로 바꾼다",
+        "cost": { "faith": 4 },
+        "success_rate": 0.8,
+        "result_text_success": "식초가 포도주로 바뀌는 기적이 일어나자, 사람들은 감격하며 여신의 은혜를 찬양했습니다!",
+        "result_text_failure": "기적이 일어나긴 했지만… 식초가 포도주가 아닌 액젓으로 변했습니다. 더 마시기 힘들어졌습니다.",
+        "success_reward": { "faith": 6, "population": 1, "food": 2 },
+        "failure_reward": { "faith": -3 }
+      },
+      {
+        "label": "이번 기회에 인간들이 금주를 배우게 하자",
+        "cost": {},
+        "success_rate": 0.6,
+        "result_text_success": "신도들이 새로운 절제의 미덕을 깨닫고, 조용한 축제를 즐겼습니다.",
+        "result_text_failure": "금주령에 반발한 신도들이 다른 신을 섬기겠다고 선언했습니다!",
+        "success_reward": { "faith": 2, "population": 1 },
+        "failure_reward": { "faith": -2 }
+      },
+      {
+        "label": "신도들에게 식초로 신요리를 개발하라 명한다",
+        "cost": {},
+        "success_rate": 0.7,
+        "result_text_success": "신도들이 식초를 활용한 요리를 선보이며 의외의 성과를 냈습니다. '식초 튀김'이 인기입니다!",
+        "result_text_failure": "요리가 실패하며 식중독 사태가 발생했습니다… 신도들이 배를 움켜쥐고 쓰러졌습니다.",
+        "success_reward": { "food": 3, "population": 2 },
+        "failure_reward": { "faith": -1, "population": -1, "food": -1 }
+      }
+    ]
+  },
+  {
+    "id": 36,
+    "type": "normal",
+    "title": "신도의 고백",
+    "text": "여신님, 큰일이오니이다! 한 남신도가 여신님께 기도를 통해 사랑을 고백했나이다. 그의 상사병은 점점 심해져, 이제는 밥도 먹지 않고 당신만을 떠올리고 있습니다.",
+    "options": [
+      {
+        "label": "다른 여신도와 맺어준다",
+        "cost": { "faith": 2 },
+        "success_rate": 1.0,
+        "result_text_success": "놀랍게도 둘은 천생연분이었습니다! 혼례가 열리고 마을은 축제 분위기입니다.",
+        "result_text_failure": "",
+        "success_reward": { "faith": 4, "population": 2 },
+        "failure_reward": {}
+      },
+      {
+        "label": "정중히 거절한다",
+        "cost": {},
+        "success_rate": 0.5,
+        "result_text_success": "상처를 입었지만, 신도는 여신님의 단호한 태도에 체념하고 평화를 되찾았습니다.",
+        "result_text_failure": "신도는 상사병으로 쓰러져 생을 마감했습니다. 마을엔 비통함이 감돌았습니다.",
+        "success_reward": { "faith": 1 },
+        "failure_reward": { "population": -1 }
+      }
+    ]
+  },
+  {
+    "id": 37,
+    "type": "normal",
+    "title": "성스러운 잡초",
+    "text": "여신님, 한 신도가 당신의 형상을 닮은 풀을 발견하고 '성스러운 잡초'라며 약으로 팔고 있나이다! 사실 효과는 없지만, 어떤 사람은 병이 나았고, 누군가는 '소한테 먹였더니 뛰기 시작했다'고 주장합니다.",
+    "options": [
+      {
+        "label": "가축에게 먼저 먹여 실험해본다",
+        "cost": {},
+        "success_rate": 0.7,
+        "result_text_success": "잡초를 먹은 가축들이 힘이 넘칩니다. 소가 뒷다리로 걷고, 닭이 달리기 경주에서 이겼습니다! 신도들이 환호합니다!",
+        "result_text_failure": "잡초를 먹은 염소들이 뿔이 자라다 말아 이상한 모습이 되었고, 신도들이 불길해합니다.",
+        "success_reward": { "faith": 3, "food": 3 },
+        "failure_reward": { "faith": -1, "population": -1 }
+      },
+      {
+        "label": "신의 힘을 담은 잡초 조합법을 알려준다",
+        "cost": { "faith": 3 },
+        "success_rate": 0.7,
+        "result_text_success": "새로운 조합법으로 만들어진 잡초차가 큰 인기를 끌었습니다. 모든 병이 다 낫는다는 소문이 돌고 있습니다.",
+        "result_text_failure": "조합법이 복잡해 신도들이 엉뚱한 조합을 시도했고, 이상한 냄새가 나는 수프가 탄생했습니다.",
+        "success_reward": { "faith": 4, "population": 2, "food": 1 },
+        "failure_reward": { "faith": -2 }
+      },
+      {
+        "label": "가짜 약이라며 판매를 금지한다",
+        "cost": {},
+        "success_rate": 1.0,
+        "result_text_success": "여신님의 엄명에 따라 잡초 판매는 중단되었고, 신도들은 진정한 신앙에 집중하기 시작했습니다.",
+        "result_text_failure": "",
+        "success_reward": { "faith": 2 },
+        "failure_reward": {}
+      }
+    ]
+  },
+  {
+    "id": 38,
+    "type": "normal",
+    "title": "거대한 오이 조각상",
+    "text": "여신님, 신전의 사제가 당신의 신탁을 엉뚱하게 해석해버렸습니다! 그 결과 신도들이 마을 광장에 당신을 기리는 '거대한 오이 조각상'을 세우고 경배하고 있나이다!",
+    "options": [
+      {
+        "label": "신탁의 진의를 알려준다",
+        "cost": { "faith": 2 },
+        "success_rate": 0.9,
+        "result_text_success": "신도들이 '아… 오이가 아니었군요…'라며 얼굴을 붉히고 조각상을 철거했습니다.",
+        "result_text_failure": "진의를 밝혔지만, 일부는 '오이가 진짜 아니라고?'라며 믿지 않았습니다.",
+        "success_reward": { "faith": 4 },
+        "failure_reward": { "faith": -1 }
+      },
+      {
+        "label": "오이에도 신의 뜻이 있다며 그냥 둔다",
+        "cost": {},
+        "success_rate": 1.0,
+        "result_text_success": "오이 조각상이 마을의 명물이 되었습니다. 매일 오이 축제가 열리고, 관광객이 몰려옵니다.",
+        "result_text_failure": "",
+        "success_reward": { "faith": 3, "population": 2, "food": 3 },
+        "failure_reward": {}
+      },
+      {
+        "label": "조각상을 살아 움직이게 만들어버린다",
+        "cost": { "faith": 5 },
+        "success_rate": 0.7,
+        "result_text_success": "거대한 오이 조각상이 걸어다니며 축복을 나눠주었습니다! 신도들은 경이로움에 빠졌습니다.",
+        "result_text_failure": "오이가 의지를 가지더니 자신의 조각상 정체성을 고민하며 산으로 떠났습니다…",
+        "success_reward": { "faith": 6, "population": 3 },
+        "failure_reward": { "faith": -2 }
+      }
+    ]
+  },
+  {
+    "id": 39,
+    "type": "normal",
+    "title": "사소한 기도",
+    "text": "여신님, 낮잠을 자고 계신 와중에 한 노인의 간절한 기도가 당신을 깨웠습니다… 그 이유는 고작 길 잃은 양 한 마리 때문이었습니다. ‘양돌이만 돌아오면 소원이 없겠나이다!’라며 울먹이고 있나이다.",
+    "options": [
+      {
+        "label": "양을 찾아주는 기적을 펼친다",
+        "cost": { "faith": 2 },
+        "success_rate": 0.9,
+        "result_text_success": "양돌이가 구름 위에서 미끄러져 내려와 노인의 품에 안겼습니다. 마을 사람들이 감격에 겨워했습니다!",
+        "result_text_failure": "기적은 펼쳐졌으나 염소가 돌아왔습니다… 그래도 고기 반찬이 생겼다며 노인이 흐뭇해합니다.",
+        "success_reward": { "faith": 4, "population": 1 },
+        "failure_reward": { "faith": -1, "food": 1 }
+      },
+      {
+        "label": "그깟 양 때문에 잠을 방해하다니! 노인에게 계시를 내린다",
+        "cost": {},
+        "success_rate": 0.7,
+        "result_text_success": "당신의 위엄에 마을 사람들은 두려움을 품고, 더 이상 사소한 기도를 올리지 않게 되었습니다.",
+        "result_text_failure": "계시를 듣고 노인이 놀라 넘어졌습니다. 마을은 침울한 분위기에 잠겼습니다.",
+        "success_reward": { "faith": 2 },
+        "failure_reward": { "faith": -2 }
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "type": "normal",
+    "title": "맛있어 보이는 바위",
+    "text": "여신님, 신전 뒤편에서 기이한 바위가 발견되었나이다! 그것을 핥은 신도가 ‘빵 맛이 난다’고 하였고, 곧 마을 전체가 그 바위를 핥기 시작했습니다. 지금은 매일 줄을 서서 돌을 핥고 있나이다...",
+    "options": [
+      {
+        "label": "그 바위를 진짜 빵으로 바꾼다",
+        "cost": { "faith": 4 },
+        "success_rate": 0.8,
+        "result_text_success": "바위는 따뜻한 빵으로 바뀌었고, 사람들은 ‘성스러운 빵’이라 부르며 감사히 먹었습니다.",
+        "result_text_failure": "변환 의식 중 바위가 터져 주변에 돌가루가 날렸습니다. 신도들이 실망했습니다.",
+        "success_reward": { "food": 8, "faith": 2 },
+        "failure_reward": { "faith": -2 }
+      },
+      {
+        "label": "이 기회를 이용해 '돌 핥기 의식'을 제정한다",
+        "cost": {},
+        "success_rate": 0.6,
+        "result_text_success": "신도들이 매일 돌을 핥으며 명상에 잠기고 있습니다. 기묘하지만 모두 평온합니다.",
+        "result_text_failure": "핥던 도중 진짜 돌 조각이 떨어져 이가 나간 신도가 여럿 생겼습니다.",
+        "success_reward": { "faith": 3, "food": 2 },
+        "failure_reward": { "population": -1 }
+      },
+      {
+        "label": "그냥 무시한다. 돌은 돌일 뿐이다",
+        "cost": {},
+        "success_rate": 1.0,
+        "result_text_success": "돌은 며칠 후 평범한 바위로 돌아갔습니다. 사람들도 곧 잊었습니다.",
+        "success_reward": { "faith": 1 },
+        "failure_reward": {}
+      }
+    ]
+  },
+  {
+    "id": 41,
+    "type": "special",
+    "title": "긴 겨울",
+    "text": "여신님, 예상보다 겨울이 길어지면서 식량이 바닥나고 있나이다. 사람들은 추위와 배고픔에 떨고 있습니다!",
+    "options": [
+      {
+        "label": "신력으로 사냥감을 보내준다.",
+        "cost": { "faith": 8 },
+        "success_rate": 0.8,
+        "result_text_success": "여신님이 보내준 사냥감을 잡고 식량이 배급되어 모두가 여신님의 자비에 감사해합니다.",
+        "result_text_failure": "식량이 모자라 일부 주민이 불만을 품기 시작했습니다.",
+        "success_reward": { "faith": 10, "food": 7, "population": 3 },
+        "failure_reward": { "faith": -4, "food": -2, "population": -1 }
+      },
+      {
+        "label": "사냥을 장려하고 버티라고 계시한다",
+        "cost": {},
+        "success_rate": 0.5,
+        "result_text_success": "몇몇 용감한 신도가 멧돼지를 잡아 마을을 구했습니다.",
+        "result_text_failure": "사냥에 실패해 식량은 더 줄고, 사상자도 생겼습니다.",
+        "success_reward": { "food": 7, "faith": 2 },
+        "failure_reward": { "food": -6, "population": -4, "faith": -2 }
+      }
+    ]
+  },
+  {
+    "id": 42,
+    "type": "special",
+    "title": "여신 반란",
+    "text": "여신님, 일부 세력이 '여신은 존재하지 않는다'며 신앙을 부정하고 무장 반란을 일으켰습니다! 마을이 분열되고 있나이다.",
+    "options": [
+      {
+        "label": "신력을 보여주어 반란을 진압한다",
+        "cost": { "faith": 8 },
+        "success_rate": 0.8,
+        "result_text_success": "하늘이 갈라지고 빛줄기가 쏟아지자 반란군이 무릎 꿇었습니다.",
+        "result_text_failure": "신력을 사용했지만 오히려 공포에 떨며 반란이 격화되었습니다.",
+        "success_reward": { "faith": 12, "population": 4 },
+        "failure_reward": { "faith": -7, "population": -3 }
+      },
+      {
+        "label": "설득과 화합을 시도한다",
+        "cost": {},
+        "success_rate": 0.5,
+        "result_text_success": "지혜로운 말씀으로 반란 세력이 눈물을 흘리며 돌아왔습니다.",
+        "result_text_failure": "설득에 실패하고 마을 곳곳에서 폭동이 일어났습니다.",
+        "success_reward": { "faith": 5, "population": 2 },
+        "failure_reward": { "faith": -7, "population": -3 }
+      }
+    ]
+  },
+  {
+    "id": 43,
+    "type": "special",
+    "title": "교류 차단 고민",
+    "text": "여신님, 옆 마을에 원인 불명의 병이 돌고 있다는 소문이 돌고 있습니다. 그런데 벌써 저희 마을에서도 같은 증상을 보이는 신도들이 나타났습니다! 어떻게 하시겠나이까?",
+    "options": [
+      {
+        "label": "신력을 발휘하여 병든 자들을 치료한다",
+        "cost": { "faith": 7 },
+        "success_rate": 0.9,
+        "result_text_success": "여신님의 힘으로 병자들이 회복되었고, 병은 더 퍼지지 않았습니다.",
+        "result_text_failure": "신력에도 불구하고 병은 멈추지 않았습니다. 전염병이 온 마을을 휩쓸었습니다.",
+        "success_reward": { "faith": 7, "population": 3 },
+        "failure_reward": { "faith": -5, "population": -7 }
+      },
+      {
+        "label": "즉시 교류를 전면 차단하라고 계시한다",
+        "cost": {},
+        "success_rate": 0.5,
+        "result_text_success": "교류를 끊자 더 이상의 전염은 막을 수 있었고, 마을은 간신히 안정을 되찾았습니다.",
+        "result_text_failure": "계시를 내렸지만 이미 병이 퍼지고 있었습니다. 마을 전체가 공포에 휩싸였습니다.",
+        "success_reward": { "faith": 7, "population": 3 },
+        "failure_reward": { "faith": -5, "population": -7 }
+      }
+    ]
+  },
+  {
+    "id": 44,
+    "type": "special",
+    "title": "고대 괴물 출현",
+    "text": "여신님! 오래전 당신께서 봉인하신 고대 괴물이 다시 깨어났습니다. 마을 근처 산에서 으르렁거리는 소리가 들리고, 신도들이 공포에 떨고 있습니다. 어떻게 하시겠나이까?",
+    "options": [
+      {
+        "label": "신력을 발휘하여 괴물을 다시 봉인한다",
+        "cost": { "faith": 8 },
+        "success_rate": 0.9,
+        "result_text_success": "여신님의 힘으로 괴물은 다시 깊은 땅속에 봉인되었고, 마을은 평화를 되찾았습니다.",
+        "result_text_failure": "봉인 의식 도중 괴물이 폭주하여 마을 외곽이 파괴되고 말았습니다.",
+        "success_reward": { "faith": 12, "population": 6 },
+        "failure_reward": { "faith": -5, "population": -5 }
+      },
+      {
+        "label": "용사를 임명하고 신력을 부여한다",
+        "cost": { "faith": 3 },
+        "success_rate": 0.6,
+        "result_text_success": "신력을 부여받은 용사가 괴물과 싸워 이겼습니다! 그는 마을의 영웅이 되었습니다.",
+        "result_text_failure": "용사가 용감히 싸웠지만 역부족이었습니다. 마을은 큰 피해를 입었습니다.",
+        "success_reward": { "faith": 5, "population": 3 },
+        "failure_reward": { "faith": -5, "population": -7 }
+      },
+      {
+        "label": "신도들에게 도망치라고 계시한다",
+        "cost": {},
+        "success_rate": 0.3,
+        "result_text_success": "신도들이 빠르게 대피하여 인명 피해를 최소화했습니다.",
+        "result_text_failure": "도망치다가 괴물이 마을로 들이닥쳐 큰 피해가 발생했습니다.",
+        "success_reward": { "faith": 3, "population": 2 },
+        "failure_reward": { "faith": -5, "population": -9 }
+      }
+    ]
+  },
+  {
+    "id": 45,
+    "type": "special",
+    "title": "뜨지 않는 태양",
+    "text": "여신님, 태양이 며칠째 떠오르지 않고 있나이다. 마을은 어둠에 잠식되고, 신도들은 여신께서 세상을 등지셨다고 수군거립니다.",
+    "options": [
+      {
+        "label": "신력을 집중해 태양을 억지로 끌어올린다",
+        "cost": { "faith": 7 },
+        "success_rate": 0.9,
+        "result_text_success": "당신의 힘으로 어둠을 찢고 태양이 떠올랐습니다. 신도들이 감격의 눈물을 흘립니다.",
+        "result_text_failure": "과도한 신력 사용으로 주변에 이상한 기운이 감돌고 있습니다. 태양은 다시 사라졌습니다.",
+        "success_reward": { "faith": 10, "population": 3 },
+        "failure_reward": { "faith": -5, "population": -2 }
+      },
+      {
+        "label": "신도들에게 노래로 태양신을 깨우라 명한다",
+        "cost": { "faith": 2 },
+        "success_rate": 0.6,
+        "result_text_success": "신도들이 온 마을에 퍼져 노래하자, 태양신이 기지개를 켜며 깨어났습니다. ‘좋은 꿈 꾸고 있었는데…’",
+        "result_text_failure": "노래가 너무 엉망이었습니다. 태양신이 화를 내며 이불을 뒤집어썼습니다.",
+        "success_reward": { "faith": 8, "population": 2 },
+        "failure_reward": { "faith": -3, "population": -2 }
+      },
+      {
+        "label": "이 또한 시련이라며 신도들을 설득한다",
+        "cost": {},
+        "success_rate": 0.3,
+        "result_text_success": "신도들이 묵묵히 시련을 받아들이며 인내심을 다졌습니다. 하지만 일부는 여전히 불안해합니다.",
+        "failure_reward": { "faith": -7, "population": -4 },
+        "success_reward": { "faith": 0, "population": 1 },
+        "result_text_failure": "두려움에 떨던 신도들이 모두 도망칩니다."
+      }
+    ]
+  },
+  {
+    "id": 46,
+    "type": "special",
+    "title": "오염된 물",
+    "text": "여신님, 식수를 공급하는 강이 오염되어 많은 신도들이 물을 마시고 시름시름 앓고 있나이다. 일부는 이미 쓰러졌고, 마을의 식량 소비량도 급증하고 있습니다!",
+    "options": [
+      {
+        "label": "신력을 사용해 강을 정화한다",
+        "cost": { "faith": 8 },
+        "success_rate": 0.8,
+        "result_text_success": "강물이 맑아지자 모두 환호하며 여신의 은혜에 감사를 표했습니다!",
+        "result_text_failure": "정화 의식 도중 강에서 괴상한 기운이 뿜어져 나왔습니다. 신도들이 더 불안해합니다.",
+        "success_reward": { "faith": 10, "population": 3, "food": 2 },
+        "failure_reward": { "faith": -3, "population": -3 }
+      },
+      {
+        "label": "물을 정화하는 방법을 계시로 알려준다",
+        "cost": { "faith": 2 },
+        "success_rate": 0.65,
+        "result_text_success": "신도들이 계시에 따라 정화법을 실천하여 마을을 구해냈습니다!",
+        "result_text_failure": "계시는 받았으나 엉뚱한 약초를 써서 더 많은 이들이 쓰러졌습니다.",
+        "success_reward": { "faith": 5, "population": 2 },
+        "failure_reward": { "faith": -2, "population": -5 }
+      },
+      {
+        "label": "자연에 맡긴다. 병든 자는 신의 뜻에 따를 것이다",
+        "cost": {},
+        "success_rate": 0.3,
+        "result_text_success": "신도들이 스스로 회복하며 신의 뜻을 실감했습니다.",
+        "result_text_failure": "병이 마을 전체로 퍼져 다수의 사망자가 발생했습니다.",
+        "success_reward": { "faith": 2, "population": -1 },
+        "failure_reward": { "faith": -5, "population": -7, "food": -2 }
+      }
+    ]
+  },
+  {
+    "id": 47,
+    "type": "special",
+    "title": "농작물 병해",
+    "text": "여신님, 마을 밭에 정체불명의 병이 돌아 작물들이 시들어가고 있습니다! 사람들은 식량 부족을 걱정하며 여신님의 도움을 간청하고 있나이다.",
+    "options": [
+      {
+        "label": "소풍 간 대지의 여신을 불러들인다",
+        "cost": { "faith": 7 },
+        "success_rate": 0.9,
+        "result_text_success": "대지의 여신은 오지 않았지만, 대신 소개받은 풍요의 남신이 방문해 황금빛 밭으로 변화시켜주었습니다!",
+        "result_text_failure": "남신이 실수로 마을 온 밭을 모래로 바꾸어버렸습니다. ‘어라, 이게 아닌데...’",
+        "success_reward": { "faith": 3, "food": 10, "population": 2 },
+        "failure_reward": { "faith": -5, "food": -8 }
+      },
+      {
+        "label": "황금 돼지를 내려 보내 거름을 준다",
+        "cost": { "faith": 4 },
+        "success_rate": 0.7,
+        "result_text_success": "황금 돼지가 밭을 한바퀴 돌자 신기하게도 작물들이 되살아났습니다!",
+        "result_text_failure": "황금 돼지가 작물들을 다 먹어 치우고, 춤을 추기 시작했습니다. 적어도 마을 아이들은 좋아하네요.",
+        "success_reward": { "faith": 5, "food": 5 },
+        "failure_reward": { "faith": -2, "food": -3 }
+      },
+      {
+        "label": "물을 더 많이 주라고 계시한다",
+        "cost": {},
+        "success_rate": 0.3,
+        "result_text_success": "신도들이 열심히 물을 주자 일부 밭이 살아났습니다. ‘이제부터는 말라도 먼저 물부터 주자!’",
+        "result_text_failure": "과한 물 때문에 밭이 진흙탕이 되어 썩고 말았습니다.",
+        "success_reward": { "food": 3 },
+        "failure_reward": { "food": -4 }
+      }
+    ]
+  },
+  {
+    "id": 48,
+    "type": "special",
+    "title": "화산 폭발",
+    "text": "여신님, 불의 여신께서 당신을 질투하여 화산을 폭발시켰습니다! 뜨거운 용암과 화산재가 마을로 밀려오고 있나이다!",
+    "options": [
+      {
+        "label": "신력을 집중해 용암을 막을 거대한 벽을 만든다",
+        "cost": { "faith": 8 },
+        "success_rate": 0.8,
+        "result_text_success": "벽이 용암을 막아내며 마을이 무사했습니다. 거대한 벽으로 마을이 유명해졌습니다.",
+        "result_text_failure": "벽이 세워졌지만 너무 얇았습니다. 용암이 새어나와 일부 지역을 덮쳤습니다.",
+        "success_reward": { "faith": 10, "population": 5, "food": 2 },
+        "failure_reward": { "faith": -5, "population": -3, "food": -4 }
+      },
+      {
+        "label": "신도들에게 높은 곳으로 대피하라고 계시한다",
+        "cost": { "faith": 2 },
+        "success_rate": 0.5,
+        "result_text_success": "빠르게 산 위로 피신한 덕분에 많은 이들이 목숨을 건졌습니다.",
+        "result_text_failure": "대피가 늦었습니다. 많은 신도가 목숨을 잃었고 마을 대부분이 화산재에 뒤덮였습니다.",
+        "success_reward": { "population": 3 },
+        "failure_reward": { "faith": -2, "population": -7, "food": -8 }
+      },
+      {
+        "label": "불의 여신에게 ‘당신이 제일 아름답다’고 속삭인다",
+        "cost": {},
+        "success_rate": 0.3,
+        "result_text_success": "불의 여신이 웃으며 화산을 진정시켰습니다. ‘알아, 그 정도는.’",
+        "result_text_failure": "‘거짓말이 제일 싫어!’ 불의 여신이 삐져서 화산을 세 번 연속 폭발시켰습니다. 마을은 용암에 뒤덮였습니다.",
+        "success_reward": { "faith": 5, "population": 2 },
+        "failure_reward": { "faith": -5, "population": -10, "food": -10 }
+      }
+    ]
+  },
+  {
+    "id": 49,
+    "type": "special",
+    "title": "망령 침입",
+    "text": "여신님, 오래전 전장에서 죽은 자들의 영혼이 마을에 출몰하고 있습니다! 신도들은 두려움에 떨며 당신의 계시를 기다리고 있습니다.",
+    "options": [
+      {
+        "label": "대규모 퇴마 의식을 집전한다",
+        "cost": { "faith": 7 },
+        "success_rate": 0.8,
+        "result_text_success": "강력한 퇴마의식으로 망령들이 모두 소멸하고 마을은 평화를 되찾았습니다! 망령들이 입은 황금 갑옷을 팔아 막대한 부가 생겼습니다.",
+        "result_text_failure": "퇴마의식이 실패했습니다. 망령들이 마을로 쳐들어와 큰 피해를 입었습니다.",
+        "success_reward": { "faith": 8, "population": 4, "food": 3 },
+        "failure_reward": { "faith": -5, "population": -7 }
+      },
+      {
+        "label": "망령들과 대화를 시도하라고 계시한다",
+        "cost": { "faith": 3 },
+        "success_rate": 0.5,
+        "result_text_success": "망령들이 사연을 털어놓고, 오히려 마을을 지켜주겠다고 약속했습니다! (이게 되네?)",
+        "result_text_failure": "망령들과의 소통은 실패했고, 그들은 신도들을 쫓기 시작했습니다. 신도들이 크게 다쳤습니다.",
+        "success_reward": { "faith": 6, "population": 3 },
+        "failure_reward": { "faith": -3, "population": -6 }
+      },
+      {
+        "label": "망령의 약점을 계시로 알려준다",
+        "cost": {},
+        "success_rate": 0.3,
+        "result_text_success": "신도들이 망령의 약점인 투구를 집중적으로 공격해 망령들을 몰아냈습니다!",
+        "result_text_failure": "약점을 이용하려다가 망령의 분노가 더 커져서 더 큰 화를 입었습니다.",
+        "success_reward": { "faith": 3, "population": 2 },
+        "failure_reward": { "faith": -4, "population": -7 }
+      }
+    ]
+  },
+  {
+    "id": 50,
+    "type": "special",
+    "title": "전쟁 선포",
+    "text": "여신님, 인접 국가가 우리 마을에 전쟁을 선포하고 공격해오고 있습니다! 신도들은 두려움에 떨며 여신의 계시를 기다리고 있습니다.",
+    "options": [
+      {
+        "label": "신성한 힘을 방패에 내려준다",
+        "cost": { "faith": 8 },
+        "success_rate": 0.9,
+        "result_text_success": "신성한 방패가 적의 무기를 튕겨냈고, 마을은 피해 없이 살아남았습니다!",
+        "result_text_failure": "적의 공격에 방패는 힘 없이 튕겨져 나갔습니다. 적군이 쳐들어와 마을이 불타고 있습니다.",
+        "success_reward": { "faith": 10, "population": 4 },
+        "failure_reward": { "faith": -4, "population": -5, "food": -5 }
+      },
+      {
+        "label": "용맹한 신도들로 군대를 결성한다",
+        "cost": { "faith": 3 },
+        "success_rate": 0.6,
+        "result_text_success": "신도들이 목숨 걸고 마을을 방어해냈습니다. 그들은 영웅으로 떠받들어졌습니다!",
+        "result_text_failure": "훈련 부족으로 대패를 당했고, 많은 신도들이 다쳤습니다.",
+        "success_reward": { "faith": 5, "population": 3 },
+        "failure_reward": { "faith": -2, "population": -6 }
+      },
+      {
+        "label": "전쟁은 시련이라며 아무 대응도 하지 않는다",
+        "cost": {},
+        "success_rate": 0.3,
+        "result_text_success": "놀랍게도 적군은 갑자기 후퇴하며 물러났습니다. (배탈이 났다더군요)",
+        "result_text_failure": "마을은 전면전 끝에 초토화되었습니다.",
+        "success_reward": { "faith": 3, "population": 2 },
+        "failure_reward": { "faith": -6, "population": -10, "food": -4 }
+      }
+    ]
+  },
+  {
+    "id": 51,
+    "type": "miracle",
+    "title": "황금빛 나무",
+    "text": "여신님, 신전 근처에 황금빛으로 빛나는 나무가 자라났습니다! 잎사귀는 곡식 냄새를 풍기며, 신도들은 이 나무가 여신의 축복이라 믿고 있습니다.",
+    "options": [
+      {
+        "label": "신비한 나무의 열매를 수확하게 한다",
+        "cost": {},
+        "success_rate": 1.0,
+        "result_text_success": "열매는 상상 이상으로 풍성했습니다. 마을은 한동안 굶주릴 걱정이 없습니다!",
+        "success_reward": { "food": 12, "faith": 3 }
+      }
+    ]
+  },
+  {
+    "id": 52,
+    "type": "miracle",
+    "title": "남신의 고백",
+    "text": "『오, 찬란한 여신이여. 저는 이웃 산을 다스리는 남신입니다. 『당신께 반한 제 마음을 감히 숨길 수 없나이다. 제 사랑을 증명하기 위해, 당신의 마을에 축복을 내리겠습니다.",
+    "options": [
+      {
+        "label": "신앙의 축복을 부탁한다.",
+        "cost": {},
+        "success_rate": 1.0,
+        "result_text_success": "남신이 읊은 연애시가 하늘을 울리자, 신도들이 감격에 젖어 신앙심에 불탔습니다.",
+        "success_reward": { "faith": 10 }
+      },
+      {
+        "label": "풍요의 축복을 부탁한다.",
+        "cost": {},
+        "success_rate": 1.0,
+        "result_text_success": "『남신이 눈물을 흘리자 단비가 내렸고, 작물들이 기적처럼 자라났습니다.",
+        "success_reward": { "food": 10 }
+      },
+      {
+        "label": "백성들을 위한 축복을 원합니다.",
+        "cost": {},
+        "success_rate": 1.0,
+        "result_text_success": "남신이 미소를 짓고 마을을 축복하자, 많은 이들이 이끌려 마을로 이주해왔습니다.",
+        "success_reward": { "population": 10 }
+      }
+    ]
+  },
+  {
+    "id": 53,
+    "type": "miracle",
+    "title": "신의 반려동물",
+    "text": "황금빛을 두른 커다란 소 한 마리가 나타납니다. 온몸이 반짝이며 신성한 기운을 풍기는 이 소는 감히 신의 가족이 되길 바라고 있습니다.",
+    "options": [
+      {
+        "label": "반려소가 되는 것을 수락한다.",
+        "cost": {},
+        "success_rate": 1.0,
+        "result_text_success": "황금 소는 감격하여 마을 전역의 밭을 뿔로 갈아엎었습니다. 작물들이 기적처럼 쑥쑥 자라나고 있습니다!",
+        "success_reward": { "food": 12 }
+      },
+      {
+        "label": "마음의 준비가 되지 않아 반려소가 되는 것을 거부한다.",
+        "cost": {},
+        "success_rate": 1.0,
+        "result_text_success": "황금 소는 울음을 터뜨리며 신전 앞에 무릎(?)을 꿇고 기도를 시작했습니다. 신도들이 그 모습에 감동하여 신앙심이 치솟았습니다.",
+        "success_reward": { "faith": 10 }
+      }
+    ]
+  },
+  {
+    "id": 54,
+    "type": "miracle",
+    "title": "하늘에서 떨어진 알",
+    "text": "여신님, 갑자기 하늘에서 거대한 황금 알이 떨어졌습니다! 신전 앞마당에 우뚝 솟은 이 알은 빛나고 있으며, 아무도 손대지 못하고 있나이다.",
+    "options": [
+      {
+        "label": "알의 주인을 찾아본다",
+        "cost": {},
+        "success_rate": 1.0,
+        "result_text_success": "사랑의 신이 나타나 알을 보고 깜짝 놀라며 말했습니다. 『이건 내 애완 용의 알이야! 찾고 있었어.』 감사 인사로 마을에 사랑의 축복을 내려주었습니다.",
+        "success_reward": { "population": 10 }
+      },
+      {
+        "label": "알을 신전에 장식한다",
+        "cost": {},
+        "success_rate": 1.0,
+        "result_text_success": "알은 그대로 신전의 중심에 장식되었고, 사람들은 기도를 드리기 위해 몰려들기 시작했습니다. 마을은 유명한 성지가 되었습니다.",
+        "success_reward": { "faith": 10 }
+      },
+      {
+        "label": "알을 직접 품어본다(?)",
+        "cost": {},
+        "success_rate": 1.0,
+        "result_text_success": "며칠 후 알이 ‘쩍’ 하고 갈라지더니, 안에서 거대한 황금빛 빵이 나왔습니다! 맛있는 냄새에 신도들이 감탄하였습니다.",
+        "success_reward": { "food": 10 }
+      }
+    ]
+  },
+  {
+    "id": 55,
+    "type": "miracle",
+    "title": "마법의 샘물",
+    "text": "요정들이 여신님의 아름다움에 감동하여, 신비한 마법의 샘물을 바쳤습니다. 그 물은 무지갯빛으로 반짝이며 하늘향으로 흐르고 있나이다.",
+    "options": [
+      {
+        "label": "샘물로 농사를 짓는다",
+        "cost": {},
+        "success_rate": 1.0,
+        "result_text_success": "샘물로 밭을 적시자 작물들이 무지갯빛으로 빛나기 시작했습니다! 마을에 풍년이 찾아왔습니다.",
+        "success_reward": { "food": 10 }
+      },
+      {
+        "label": "샘물을 신도들에게 마시게 한다",
+        "cost": {},
+        "success_rate": 1.0,
+        "result_text_success": "샘물을 마신 이들은 병이 낫고, 이후 태어난 아이들은 힘이 넘쳤습니다! 신도들은 당신을 더욱 경외하게 되었습니다.",
+        "success_reward": { "faith": 5, "population": 5 }
+      }
+    ]
   }
 ]
