@@ -1,130 +1,77 @@
 extends Control
 
-@onready var event_system = $EventSystem
-@onready var parameter_system = $ParameterSystem
-@onready var state_system = $StateSystem
+@onready var year_label: Label = $UI/TopBar/YearLabel
+@onready var faith_label: Label = $UI/TopBar/FaithLabel
+@onready var food_label: Label = $UI/TopBar/FoodLabel
+@onready var population_label: Label = $UI/TopBar/PopulationLabel
 
-var current_event: Dictionary
-var pending_reward: Dictionary = {}
-var pending_result_text: String = ""
-var stage: String = "choice"
-var reward_success: bool = true
+@onready var event_popup: AcceptDialog = $UI/EventPopup
+@onready var event_title: Label = $UI/EventPopup/VBox/EventTitle
+@onready var event_description: Label = $UI/EventPopup/VBox/EventDescription
+@onready var choice_buttons_container: VBoxContainer = $UI/EventPopup/VBox/ChoiceButtons
+
+var current_event_data: Dictionary = {}
 
 func _ready():
-	event_system.load_events()
-	parameter_system.reset()
-	show_next_event()
-
-func show_next_event():
-	state_system.check_states()
-	current_event = event_system.get_random_event(Parameter.year)
-	show_event(current_event)
-	update_header()
-
-func show_event(event: Dictionary):
-	$EventArea/TitleText.text = event["title"]
-	$EventArea/EventText.text = event["text"]
-
-	for i in range(3):
-		var btn = $EventArea.get_node_or_null("Choice%dButton" % (i + 1))
-		if btn == null:
-			print("❗버튼이 없습니다: Choice%dButton" % (i + 1))
-		if btn:
-			if i < event["options"].size():
-				var option = event["options"][i]
-				var label = option["label"]
-				var cost_dict = option.get("cost", {})
-				var cost_text = get_cost_text(cost_dict)
-				btn.text = label + ("\n[비용] " + cost_text if cost_text != "" else "")
-				btn.visible = true
-				btn.disabled = not can_afford(cost_dict)
-			else:
-				btn.visible = false
-
-	$EventArea/NextButton.visible = false
-	stage = "choice"
-
-func can_afford(cost: Dictionary) -> bool:
-	for key in cost.keys():
-		if Parameter.get(key) < cost[key]:
-			return false
-	return true
-
-func get_cost_text(cost: Dictionary) -> String:
-	var parts = []
-	for key in cost.keys():
-		var value = cost[key]
-		if value > 0:
-			parts.append("%s -%d" % [get_label(key), value])
-	return ", ".join(parts)
-
-func get_label(key: String) -> String:
-	match key:
-		"faith": return "신앙"
-		"food": return "식량"
-		"population": return "인구"
-		_: return key
-
-func show_result_text(text: String):
-	$EventArea/EventText.text = text
-	for i in range(3):
-		var btn = $EventArea.get_node_or_null("Choice%dButton" % (i + 1))
-		if btn:
-			btn.visible = false
-	$EventArea/NextButton.visible = true
-
-func get_reward_text(dict: Dictionary) -> String:
-	var parts = []
-	for k in dict.keys():
-		var v = dict[k]
-		if v != 0:
-			parts.append("%s %+d" % [get_label(k), v])
-	return ", ".join(parts)
-
-func update_header():
-	$Header/ParamBox/MarginContainer/PopulationLabel.text = "인구: %d" % Parameter.population
-	$Header/ParamBox/MarginContainer3/FoodLabel.text = "식량: %d" % Parameter.food
-	$Header/ParamBox/MarginContainer2/FaithLabel.text = "신앙: %d" % Parameter.faith
-
-	var states = []
-	if Parameter.famine: states.append("기근")
-	if Parameter.distrust: states.append("불신")
-	if Parameter.prosperity: states.append("번영")
-	$Header/InfoBox/StateLabel.text = ", ".join(states) if states.size() > 0 else "정상 상태"
-	$Header/InfoBox/YearLabel.text = "%d년" % Parameter.year
-
-func _on_Choice1Button_pressed(): resolve_event(0)
-func _on_Choice2Button_pressed(): resolve_event(1)
-func _on_Choice3Button_pressed(): resolve_event(2)
-
-func resolve_event(index: int):
-	var option = current_event["options"][index]
-	parameter_system.apply_cost(option.get("cost", {}))
-	update_header()
-
-	reward_success = randf() < option.get("success_rate", 1.0)
-	pending_reward = option.get("success_reward", {}) if reward_success else option.get("failure_reward", {})
-	var result_text = option.get("result_text_success", "") if reward_success else option.get("result_text_failure", "")
+	ParameterManager.parameter_changed.connect(_on_parameter_changed)
+	ParameterManager.year_changed.connect(_on_year_changed)
+	ParameterManager.game_over.connect(_on_game_over)
+	EventManager.event_started.connect(_on_event_started)
+	update_all_ui()
+	EventManager.start_game()
 	
-	var result = get_reward_text(pending_reward)
+func update_all_ui():
+	year_label.text = "연도: %d년" % ParameterManager.year
+	faith_label.text = "신앙: %d" % ParameterManager.faith
+	food_label.text = "식량: %d" % ParameterManager.food
+	population_label.text = "인구: %d명" % ParameterManager.population
 
-	stage = "result"
-	show_result_text(result_text + (("\n[보상] " + result) if result != "" else ""))
+func _on_parameter_changed(param_name: String, new_value: int):
+	match param_name:
+		"faith":
+			faith_label.text = "신앙: %d" % new_value
+		"food":
+			food_label.text = "식량: %d" % new_value
+		"population":
+			population_label.text = "인구: %d명" % new_value
+			
+func _on_year_changed(new_year: int):
+	year_label.text = "연도: %d년" % new_year
+	
+func _on_event_started(event_data: Dictionary):
+	current_event_data = event_data
+	show_event_popup(event_data)
+	
+func show_event_popup(event_data: Dictionary):
+	event_title.text = event_data.get("title", "이벤트")
+	event_description.text = event_data.get("description", "설명 없음")
+	clear_choice_buttons()
+	create_choice_buttons(event_data.get("choices", []))
+	event_popup.popup_centered()
 
-func _on_NextButton_pressed():
-	if stage == "result":
-		parameter_system.apply_reward(pending_reward)
-		update_header()
-		stage="yearly"
-	if stage == "yearly":
-		var yearly_result = parameter_system.yearly_changes_text()
-		show_result_text(yearly_result)
-		stage = "next"
-	elif stage == "next":
-		parameter_system.apply_yearly_changes()
-		update_header()
-		parameter_system.next_year()
-		if parameter_system.is_gameover():
-			get_tree().change_scene_to_file("res://scenes/GameOver.tscn")
-		else:
-			show_next_event()
+func clear_choice_buttons():
+	for child in choice_buttons_container.get_children():
+		child.queue_free()
+
+func create_choice_buttons(choices: Array):
+	for i in range(choices.size()):
+		var choice = choices[i]
+		var button = Button.new()
+		button.text = choice.get("text", "선택지 %d" % (i + 1))
+		button.pressed.connect(_on_choice_selected.bind(i))
+		choice_buttons_container.add_child(button)
+
+func _on_choice_selected(choice_index: int):
+	EventManager.choose(choice_index)
+	event_popup.hide()
+
+func _on_game_over(reason: String):
+	show_game_over(reason)
+
+func show_game_over(reason: String):
+	var game_over_popup = AcceptDialog.new()
+	game_over_popup.dialog_text = "게임 오버!\n\n사유: %s\n생존 년수: %d년" % [reason, ParameterManager.year]
+	game_over_popup.title = "게임 종료"
+	add_child(game_over_popup)
+	game_over_popup.popup_centered()
+	EventManager.event_timer.stop()
