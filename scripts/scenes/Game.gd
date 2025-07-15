@@ -13,10 +13,15 @@ extends Control
 var current_event_data: Dictionary = {}
 
 func _ready():
+	clear_all_humans()
+	spawn_initial_population()
+	ParameterManager.init_parameter()
+	
 	ParameterManager.parameter_changed.connect(_on_parameter_changed)
 	ParameterManager.year_changed.connect(_on_year_changed)
 	ParameterManager.game_over.connect(_on_game_over)
 	EventManager.event_started.connect(_on_event_started)
+	
 	update_all_ui()
 	EventManager.start_game()
 	event_popup.process_mode = Node.PROCESS_MODE_WHEN_PAUSED
@@ -26,6 +31,54 @@ func update_all_ui():
 	faith_label.text = "신앙: %d" % ParameterManager.faith
 	food_label.text = "식량: %d" % ParameterManager.food
 	population_label.text = "인구: %d명" % ParameterManager.population
+
+func create_human(spawn_position):
+	var human = Human.new(spawn_position)
+	
+	var color_rect = ColorRect.new()
+	color_rect.name = "ColorRect"
+	color_rect.size = Vector2(30, 30)
+	color_rect.color = Color.BLUE
+	color_rect.position = Vector2(-15, -15)
+	human.add_child(color_rect)
+	
+	var health_bar = ProgressBar.new()
+	health_bar.name = "HealthBar"
+	health_bar.size = Vector2(40, 8)
+	health_bar.position = Vector2(-20, -25)
+	health_bar.max_value = Constants.HUMAN_MAX_HEALTH
+	health_bar.value = Constants.HUMAN_MAX_HEALTH
+	human.add_child(health_bar)
+	
+	var collision_shape = CollisionShape2D.new()
+	var shape = RectangleShape2D.new()
+	shape.size = Vector2(30, 30)
+	collision_shape.shape = shape
+	human.add_child(collision_shape)
+	
+	$Units.add_child(human)
+	
+	var offset = Vector2(randf_range(-50, 50), randf_range(-50, 50))
+	human.global_position = spawn_position + offset
+	
+	return human
+
+func spawn_initial_population():
+	var target_population = ParameterManager.population
+	var residence = $Facilities/Residence/CollisionShape2D
+	
+	var spawn_position = residence.global_position
+	
+	for i in range(target_population):
+		create_human(spawn_position)
+	
+	print("인구 %d명이 생성되었습니다." % target_population)
+
+func clear_all_humans():
+	var units_group = $Units
+	for child in units_group.get_children():
+		if child is Human:
+			child.queue_free()
 
 func _on_parameter_changed(param_name: String, new_value: int):
 	match param_name:
@@ -78,11 +131,11 @@ func create_choice_buttons(options: Array):
 		choice_buttons_container.add_child(button)
 
 func format_resource_text(type: String, amount: int) -> String:
-	var sign = "+" if amount > 0 else ""
+	var resource_sign = "+" if amount > 0 else ""
 	match type:
-		"faith": return "신앙 %s%d" % [sign, amount]
-		"food": return "식량 %s%d" % [sign, amount]
-		"population": return "인구 %s%d" % [sign, amount]
+		"faith": return "신앙 %s%d" % [resource_sign, amount]
+		"food": return "식량 %s%d" % [resource_sign, amount]
+		"population": return "인구 %s%d" % [resource_sign, amount]
 		_: return ""
 
 func _on_choice_selected(choice_index: int):

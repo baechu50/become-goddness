@@ -37,7 +37,7 @@ const RESTAURANT_CONSUMPTION_MULTIPLIER: float = 1.0
 
 # 게임 시스템
 const FACILITY_UPDATE_INTERVAL: int = 1
-const EVENT_INTERVAL: int = 3
+const EVENT_INTERVAL: int = 30
 const TOKEN_PER_YEAR: int = 1
 
 # UI 표시 관련

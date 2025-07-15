@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://dsv1fxtw01nff"]
+[gd_scene load_steps=3 format=3 uid="uid://dsv1fxtw01nff"]
 
 [ext_resource type="Script" uid="uid://e8jr6bvpkxqg" path="res://scripts/scenes/Game.gd" id="1_ibkli"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ibkli"]
+size = Vector2(306, 302)
 
 [node name="Game" type="Control"]
 layout_mode = 3
@@ -82,3 +85,59 @@ offset_bottom = 235.0
 theme_override_font_sizes/font_size = 36
 text = "0
 "
+
+[node name="Facilities" type="Node2D" parent="."]
+
+[node name="Residence" type="Area2D" parent="Facilities"]
+
+[node name="ColorRect" type="ColorRect" parent="Facilities/Residence"]
+offset_left = 395.0
+offset_top = 482.0
+offset_right = 695.0
+offset_bottom = 782.0
+color = Color(0.152941, 0.427451, 1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Facilities/Residence"]
+position = Vector2(544, 634)
+shape = SubResource("RectangleShape2D_ibkli")
+
+[node name="Farm" type="Area2D" parent="Facilities"]
+
+[node name="ColorRect" type="ColorRect" parent="Facilities/Farm"]
+offset_left = 54.0
+offset_top = 815.0
+offset_right = 354.0
+offset_bottom = 1115.0
+color = Color(0.662256, 0.413486, 0.23812, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Facilities/Farm"]
+position = Vector2(203, 967)
+shape = SubResource("RectangleShape2D_ibkli")
+
+[node name="Restaurant" type="Area2D" parent="Facilities"]
+
+[node name="ColorRect" type="ColorRect" parent="Facilities/Restaurant"]
+offset_left = 391.0
+offset_top = 815.0
+offset_right = 691.0
+offset_bottom = 1115.0
+color = Color(0.248788, 0.546389, 0.446953, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Facilities/Restaurant"]
+position = Vector2(540, 967)
+shape = SubResource("RectangleShape2D_ibkli")
+
+[node name="Temple" type="Area2D" parent="Facilities"]
+
+[node name="ColorRect" type="ColorRect" parent="Facilities/Temple"]
+offset_left = 58.0
+offset_top = 478.0
+offset_right = 358.0
+offset_bottom = 778.0
+color = Color(0.519283, 0.362938, 0.864475, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Facilities/Temple"]
+position = Vector2(207, 630)
+shape = SubResource("RectangleShape2D_ibkli")
+
+[node name="Units" type="Node2D" parent="."]

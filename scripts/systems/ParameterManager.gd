@@ -16,6 +16,12 @@ signal year_changed(new_year: int)
 signal status_changed(status_name: String, active: bool)
 signal game_over(reason: String)
 
+func init_parameter()->void:
+	year = 1
+	faith = Constants.INITIAL_FAITH
+	food = Constants.INITIAL_FOOD
+	population = Constants.INITIAL_POPULATION
+
 func change_faith(amount: int) -> void:
 	faith += amount
 	parameter_changed.emit("faith", faith)
