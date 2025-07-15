@@ -9,6 +9,8 @@ var famine = false
 var distrust = false
 var prosperity = false
 
+var game_over_reason: String = ""
+
 signal parameter_changed(param_name: String, new_value: int)
 signal year_changed(new_year: int)
 signal status_changed(status_name: String, active: bool)

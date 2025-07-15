@@ -5,7 +5,7 @@ extends Control
 @onready var food_label: Label = $UI/TopBar/FoodLabel
 @onready var population_label: Label = $UI/TopBar/PopulationLabel
 
-@onready var event_popup: AcceptDialog = $UI/EventPopup
+@onready var event_popup: PopupPanel = $UI/EventPopup
 @onready var event_title: Label = $UI/EventPopup/VBox/EventTitle
 @onready var event_description: Label = $UI/EventPopup/VBox/EventDescription
 @onready var choice_buttons_container: VBoxContainer = $UI/EventPopup/VBox/ChoiceButtons
@@ -19,6 +19,7 @@ func _ready():
 	EventManager.event_started.connect(_on_event_started)
 	update_all_ui()
 	EventManager.start_game()
+	event_popup.process_mode = Node.PROCESS_MODE_WHEN_PAUSED
 	
 func update_all_ui():
 	year_label.text = "연도: %d년" % ParameterManager.year
@@ -43,35 +44,77 @@ func _on_event_started(event_data: Dictionary):
 	show_event_popup(event_data)
 	
 func show_event_popup(event_data: Dictionary):
-	event_title.text = event_data.get("title", "이벤트")
-	event_description.text = event_data.get("description", "설명 없음")
+	event_title.text = event_data.get("title")
+	event_description.text = event_data.get("text")
 	clear_choice_buttons()
-	create_choice_buttons(event_data.get("choices", []))
+	create_choice_buttons(event_data.get("options", []))
 	event_popup.popup_centered()
 
 func clear_choice_buttons():
 	for child in choice_buttons_container.get_children():
 		child.queue_free()
 
-func create_choice_buttons(choices: Array):
-	for i in range(choices.size()):
-		var choice = choices[i]
+func create_choice_buttons(options: Array):
+	for i in range(options.size()):
+		var option = options[i]
 		var button = Button.new()
-		button.text = choice.get("text", "선택지 %d" % (i + 1))
+		
+		var label = option.get("label", "")
+		var cost = option.get("cost", {})
+		
+		var costs = []
+		var can_afford = true
+		
+		for type in cost:
+			if cost[type] < 0:
+				costs.append(format_resource_text(type, cost[type]))
+				if ParameterManager.get(type) < abs(cost[type]):
+					can_afford = false
+		
+		button.text = label if costs.size() == 0 else "%s (%s)" % [label, " ".join(costs)]
 		button.pressed.connect(_on_choice_selected.bind(i))
+		button.add_theme_font_size_override("font_size", 36)
+		button.disabled = !can_afford
 		choice_buttons_container.add_child(button)
 
+func format_resource_text(type: String, amount: int) -> String:
+	var sign = "+" if amount > 0 else ""
+	match type:
+		"faith": return "신앙 %s%d" % [sign, amount]
+		"food": return "식량 %s%d" % [sign, amount]
+		"population": return "인구 %s%d" % [sign, amount]
+		_: return ""
+
 func _on_choice_selected(choice_index: int):
-	EventManager.choose(choice_index)
+	var result = EventManager.choose(choice_index)
+	show_result(result.result_text, result.reward)
+
+func show_result(result_text: String, reward: Dictionary):
+	for button in choice_buttons_container.get_children():
+		button.queue_free()
+	
+	var full_text = result_text
+	if not reward.is_empty():
+		for type in reward:
+			var amount = reward[type]
+			full_text += "\n" + format_resource_text(type, amount)
+			
+	event_description.text = full_text
+	create_next_buttons()
+	
+func create_next_buttons():
+	var button = Button.new()
+	button.text = "다음"
+	button.pressed.connect(_on_next_pressed)
+	button.add_theme_font_size_override("font_size", 36)
+	choice_buttons_container.add_child(button)
+	
+func _on_next_pressed():
+	ParameterManager.increase_year()
 	event_popup.hide()
+	EventManager.resume_events()
 
 func _on_game_over(reason: String):
-	show_game_over(reason)
-
-func show_game_over(reason: String):
-	var game_over_popup = AcceptDialog.new()
-	game_over_popup.dialog_text = "게임 오버!\n\n사유: %s\n생존 년수: %d년" % [reason, ParameterManager.year]
-	game_over_popup.title = "게임 종료"
-	add_child(game_over_popup)
-	game_over_popup.popup_centered()
+	ParameterManager.game_over_reason = reason
 	EventManager.event_timer.stop()
+	get_tree().call_deferred("change_scene_to_file", "res://scenes/GameOver.tscn")

@@ -60,11 +60,21 @@ func get_event_type(chance: int) -> String:
 		elif chance <= 85: return "special"
 		else: return "miracle"
 		
-func choose(choice_index: int):
-	var choice = current_event.choices[choice_index]
-	apply_effects(choice.effects)
-	ParameterManager.increase_year()
-	get_tree().paused = false
+func choose(choice_index: int) -> Dictionary:
+	var choice = current_event.options[choice_index]
+	apply_effects(choice.get("cost", {}))
+	
+	var success_rate = choice.get("success_rate", 1.0)
+	var is_success = randf() < success_rate
+	var reward = choice.get("success_reward", {}) if is_success else choice.get("failure_reward", {})
+	apply_effects(reward)
+	var result_text = choice.get("result_text_success", "") if is_success else choice.get("result_text_failure", "")
+	
+	return {
+		"success": is_success,
+		"result_text": result_text,
+		"reward": reward
+	}
 
 func apply_effects(effects: Dictionary):
 	for type in effects:
@@ -73,3 +83,7 @@ func apply_effects(effects: Dictionary):
 			"faith": ParameterManager.change_faith(amount)
 			"food": ParameterManager.change_food(amount)
 			"population": ParameterManager.change_population(amount)
+
+func resume_events():
+	get_tree().paused = false
+	event_timer.start()
