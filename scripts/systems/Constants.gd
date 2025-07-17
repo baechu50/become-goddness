@@ -10,12 +10,13 @@ const HUMAN_MAX_HEALTH: int = 100
 
 # 업그레이드 시스템
 const MAX_UPGRADE_LEVEL: int = 5
-const COST_BASE_FAITH: int = 1000
+const COST_BASE_FAITH: int = 10
 const COST_MULTIPLIER: float = 1.8
 
 # 거주지
 const RESIDENCE_BASE_TIME: int = 15
 const RESIDENT_MULTIPLIER: float = 0.8
+const RESIDENCE_BASE_CONSUMPTION: int = 2
 
 # 밭
 const FARM_BASE_PRODUCTION: int = 1

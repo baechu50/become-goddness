@@ -1,6 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://dsv1fxtw01nff"]
+[gd_scene load_steps=7 format=3 uid="uid://dsv1fxtw01nff"]
 
 [ext_resource type="Script" uid="uid://e8jr6bvpkxqg" path="res://scripts/scenes/Game.gd" id="1_ibkli"]
+[ext_resource type="Script" uid="uid://bfv1wlgqjq47r" path="res://scripts/entities/Residence.gd" id="2_qbsmt"]
+[ext_resource type="Script" uid="uid://c51ucg6pjp72l" path="res://scripts/entities/Farm.gd" id="3_cpr0p"]
+[ext_resource type="Script" uid="uid://df0g8qbe7njob" path="res://scripts/entities/Restaurant.gd" id="4_s0nni"]
+[ext_resource type="Script" uid="uid://7s77ksestxwo" path="res://scripts/entities/Temple.gd" id="5_aug50"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ibkli"]
 size = Vector2(306, 302)
@@ -89,55 +93,127 @@ text = "0
 [node name="Facilities" type="Node2D" parent="."]
 
 [node name="Residence" type="Area2D" parent="Facilities"]
+position = Vector2(528, 622)
+collision_mask = 2
+script = ExtResource("2_qbsmt")
 
 [node name="ColorRect" type="ColorRect" parent="Facilities/Residence"]
-offset_left = 395.0
-offset_top = 482.0
-offset_right = 695.0
-offset_bottom = 782.0
+offset_left = -142.0
+offset_top = -142.0
+offset_right = 158.0
+offset_bottom = 158.0
 color = Color(0.152941, 0.427451, 1, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Facilities/Residence"]
-position = Vector2(544, 634)
+position = Vector2(7, 10)
 shape = SubResource("RectangleShape2D_ibkli")
 
+[node name="UpgradeButton" type="Button" parent="Facilities/Residence"]
+custom_minimum_size = Vector2(200, 50)
+offset_left = -91.0
+offset_top = -196.0
+offset_right = 109.0
+offset_bottom = -146.0
+text = "업그레이드"
+
+[node name="LVLabel" type="Label" parent="Facilities/Residence"]
+offset_left = -7.0
+offset_top = -229.0
+offset_right = 33.0
+offset_bottom = -206.0
+text = "LV1"
+
 [node name="Farm" type="Area2D" parent="Facilities"]
+position = Vector2(213, 958)
+collision_mask = 2
+script = ExtResource("3_cpr0p")
 
 [node name="ColorRect" type="ColorRect" parent="Facilities/Farm"]
-offset_left = 54.0
-offset_top = 815.0
-offset_right = 354.0
-offset_bottom = 1115.0
+offset_left = -155.0
+offset_top = -145.0
+offset_right = 145.0
+offset_bottom = 155.0
 color = Color(0.662256, 0.413486, 0.23812, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Facilities/Farm"]
-position = Vector2(203, 967)
+position = Vector2(-6, 7)
 shape = SubResource("RectangleShape2D_ibkli")
 
+[node name="UpgradeButton" type="Button" parent="Facilities/Farm"]
+custom_minimum_size = Vector2(200, 50)
+offset_left = -104.0
+offset_top = 201.0
+offset_right = 96.0
+offset_bottom = 251.0
+text = "업그레이드"
+
+[node name="LVLabel" type="Label" parent="Facilities/Farm"]
+offset_left = -20.0
+offset_top = 168.0
+offset_right = 20.0
+offset_bottom = 191.0
+text = "LV1"
+
 [node name="Restaurant" type="Area2D" parent="Facilities"]
+position = Vector2(532, 961)
+collision_mask = 2
+script = ExtResource("4_s0nni")
 
 [node name="ColorRect" type="ColorRect" parent="Facilities/Restaurant"]
-offset_left = 391.0
-offset_top = 815.0
-offset_right = 691.0
-offset_bottom = 1115.0
+offset_left = -139.0
+offset_top = -142.0
+offset_right = 161.0
+offset_bottom = 158.0
 color = Color(0.248788, 0.546389, 0.446953, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Facilities/Restaurant"]
-position = Vector2(540, 967)
+position = Vector2(10, 10)
 shape = SubResource("RectangleShape2D_ibkli")
 
+[node name="UpgradeButton" type="Button" parent="Facilities/Restaurant"]
+custom_minimum_size = Vector2(200, 50)
+offset_left = -104.0
+offset_top = 201.0
+offset_right = 96.0
+offset_bottom = 251.0
+text = "업그레이드"
+
+[node name="LVLabel" type="Label" parent="Facilities/Restaurant"]
+offset_left = -20.0
+offset_top = 168.0
+offset_right = 20.0
+offset_bottom = 191.0
+text = "LV1"
+
 [node name="Temple" type="Area2D" parent="Facilities"]
+position = Vector2(198, 622)
+collision_mask = 2
+script = ExtResource("5_aug50")
 
 [node name="ColorRect" type="ColorRect" parent="Facilities/Temple"]
-offset_left = 58.0
-offset_top = 478.0
-offset_right = 358.0
-offset_bottom = 778.0
+offset_left = -143.0
+offset_top = -138.0
+offset_right = 157.0
+offset_bottom = 162.0
 color = Color(0.519283, 0.362938, 0.864475, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Facilities/Temple"]
-position = Vector2(207, 630)
+position = Vector2(6, 14)
 shape = SubResource("RectangleShape2D_ibkli")
+
+[node name="UpgradeButton" type="Button" parent="Facilities/Temple"]
+custom_minimum_size = Vector2(200, 50)
+offset_left = -95.0
+offset_top = -197.0
+offset_right = 105.0
+offset_bottom = -147.0
+text = "업그레이드"
+
+[node name="LVLabel" type="Label" parent="Facilities/Temple"]
+offset_left = -11.0
+offset_top = -230.0
+offset_right = 29.0
+offset_bottom = -207.0
+text = "LV1"
 
 [node name="Units" type="Node2D" parent="."]

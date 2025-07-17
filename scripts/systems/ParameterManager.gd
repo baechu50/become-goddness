@@ -12,6 +12,7 @@ var prosperity = false
 var game_over_reason: String = ""
 
 signal parameter_changed(param_name: String, new_value: int)
+signal population_increased(amount: int)
 signal year_changed(new_year: int)
 signal status_changed(status_name: String, active: bool)
 signal game_over(reason: String)
@@ -23,18 +24,22 @@ func init_parameter()->void:
 	population = Constants.INITIAL_POPULATION
 
 func change_faith(amount: int) -> void:
-	faith += amount
+	faith = max(0, faith + amount)
 	parameter_changed.emit("faith", faith)
 	check_game_over()
 
 func change_food(amount: int) -> void:
-	food += amount
+	food = max(0, food + amount)
 	parameter_changed.emit("food", food)
 	check_game_over()
 
 func change_population(amount: int) -> void:
-	population += amount
+	var old_population = population
+	population = max(0, population + amount)
 	parameter_changed.emit("population", population)
+	
+	if amount > 0 and population > old_population:
+		population_increased.emit(amount)
 	check_game_over()
 	
 func increase_year() -> void:

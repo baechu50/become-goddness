@@ -17,9 +17,9 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+Constants="*res://scripts/systems/Constants.gd"
 ParameterManager="*res://scripts/systems/ParameterManager.gd"
 EventManager="*res://scripts/systems/EventManager.gd"
-Constants="*res://scripts/Constants.gd"
 
 [display]
 

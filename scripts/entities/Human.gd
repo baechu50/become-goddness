@@ -1,4 +1,4 @@
-extends Area2D
+extends CharacterBody2D
 class_name Human
 
 var max_health: int = Constants.HUMAN_MAX_HEALTH
@@ -41,6 +41,7 @@ func _on_health_changed(new_health: int):
 func die():
 	unit_died.emit(self)
 	queue_free() 
+	ParameterManager.change_population(-1)
 
 func update_color():
 	if not sprite:
@@ -103,7 +104,7 @@ func get_colliding_facility(pos: Vector2):
 func _input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		var mouse_pos = get_global_mouse_position()
-		var is_on_unit = mouse_pos.distance_to(global_position) < 15
+		var is_on_unit = mouse_pos.distance_to(global_position) < 30
 		
 		if event.pressed and is_on_unit:
 			start_drag()
